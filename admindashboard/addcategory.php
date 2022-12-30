@@ -41,7 +41,7 @@ header("Location:http://localhost/PHP_PROJECT/admindashboard/catogerytable.php")
   </div>
   <div class="mb-3">
     <label for="exampleInputimg" class="form-label">categories img:</label>
-    <input type="text" class="form-control" id="exampleInputimg" name="categories_img">
+    <input type="file" class="form-control" id="exampleInputimg" name="categories_img">
   </div>
   
   
