@@ -36,7 +36,7 @@ $categories=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
               <!-- /.card-header -->
               <div class="card-body">
-              <a href="./add.php"  type="button" class="btn btn-outline-warning">+ ADD CATEGORY</a>
+              <a href="./addcategory.php"  type="button" class="btn btn-outline-warning">+ ADD CATEGORY</a>
              
                 <table class="table table-bordered mt-3">
                   <thead>
@@ -57,7 +57,7 @@ $categories=$stmt->fetchAll(PDO::FETCH_ASSOC);
                       <img src="..." class="rounded mx-auto d-block" alt="...">
                       </td>
                       <td>
-                      <a href="update.php?id=<?php echo $category['id'] ?>" class="btn btn-sm btn-outline-primary">Edit</a>
+                      <a href="Editcatogry.php?id=<?php echo $category['id'] ?>" class="btn btn-sm btn-outline-primary">Edit</a>
 
                      <form method="post" action="delete.php" style="display: inline-block">
                      <input  type="hidden" name="id" value="<?php echo $category['id'] ?>"/>

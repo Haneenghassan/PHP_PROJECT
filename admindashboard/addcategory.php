@@ -10,7 +10,7 @@ $statement=$db->prepare($query);
 $statement->bindValue(':name', $name);
 $statement->bindValue(':categories_img', $categories_img);
 $statement->execute();
-header("Location: http://localhost/PHP_PROJECT/admindashboard/catogerytable.php");
+header("Location:http://localhost/PHP_PROJECT/admindashboard/catogerytable.php");
 
 }
 ?>
@@ -36,12 +36,12 @@ header("Location: http://localhost/PHP_PROJECT/admindashboard/catogerytable.php"
     <h1>Manage The categories</h1>
 <form method="POST">
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">catogery Name:</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
+    <label for="exampleInputname" class="form-label">catogery Name:</label>
+    <input type="text" class="form-control" id="exampleInputname" name="name">
   </div>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">categories img:</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="categories_img">
+    <label for="exampleInputimg" class="form-label">categories img:</label>
+    <input type="text" class="form-control" id="exampleInputimg" name="categories_img">
   </div>
   
   
