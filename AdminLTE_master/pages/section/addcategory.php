@@ -3,7 +3,7 @@
 <?php
 require_once('./connect.php');
 
-if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["name"])){
+if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["name"]) && isset($_POST["categories_img"])){
     $name=$_POST['name'];
     $categories_img=$_POST['categories_img'];
 

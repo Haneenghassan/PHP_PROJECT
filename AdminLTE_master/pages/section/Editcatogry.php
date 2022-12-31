@@ -9,7 +9,7 @@ $stmt->bindValue(':id', $id);
 $stmt->execute();
 $categories=$stmt->fetch(PDO::FETCH_ASSOC);
 
-if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["name"])){
+if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["name"]) && isset($_POST["categories_img"])){
     $name=$_POST['name'];
     $categories_img=$_POST['categories_img'];
 

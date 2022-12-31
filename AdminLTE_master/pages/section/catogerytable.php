@@ -26,17 +26,17 @@ $categories=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
 </head>
 <body>
-<div class="container-fluid">
+<div class="container-fluid text-center"  style="margin-top:9%">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col">
             <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Bordered Table</h3>
+              <div class="card-header " style="background-color:#adb5bd">
+                <h1 class="card-title " style="margin-left: 40% ; font-size:2.2rem">Categories Table</h1>
               </div>
 
               <!-- /.card-header -->
               <div class="card-body">
-              <a href="./addcategory.php"  type="button" class="btn btn-outline-warning">+ ADD CATEGORY</a>
+              <a href="./addcategory.php"  type="button" class="btn btn-warning" style="margin-right: 89%">+ ADD CATEGORY</a>
              
                 <table class="table table-bordered mt-3">
                   <thead>
@@ -57,11 +57,11 @@ $categories=$stmt->fetchAll(PDO::FETCH_ASSOC);
                       <img src="..." class="rounded mx-auto d-block" alt="...">
                       </td>
                       <td>
-                      <a href="Editcatogry.php?id=<?php echo $category['id'] ?>" class="btn btn-sm btn-outline-primary">Edit</a>
+                      <a href="Editcatogry.php?id=<?php echo $category['id'] ?>" class="btn btn-success">Edit</a>
 
                      <form method="post" action="delete.php" style="display: inline-block">
                      <input  type="hidden" name="id" value="<?php echo $category['id'] ?>"/>
-                     <a href="delete.php?id=<?php echo $category['id'] ?>" class="btn btn-sm btn-outline-primary">Delete</a>
+                     <a href="delete.php?id=<?php echo $category['id'] ?>" class="btn btn-danger">Delete</a>
                     </td>
         </tr>
         <?php }?>
@@ -81,5 +81,8 @@ $categories=$stmt->fetchAll(PDO::FETCH_ASSOC);
 <script src="../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
+
+
+
 </body>
 </html>
