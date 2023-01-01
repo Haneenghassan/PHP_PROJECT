@@ -1,9 +1,8 @@
 
-
 <?php
 require_once('./connect.php');
 
-if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["name"]) && isset($_POST["categories_img"])){
+if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["name"])){
     $name=$_POST['name'];
     $categories_img=$_POST['categories_img'];
 
@@ -12,10 +11,11 @@ $statement=$db->prepare($query);
 $statement->bindValue(':name', $name);
 $statement->bindValue(':categories_img', $categories_img);
 $statement->execute();
-header("Location: http://localhost/AdminLTE-master/pages/tables/catogerytable.php");
+header("Location:http://localhost/PHP_PROJECT/AdminLTE_master/pages/section/catogerytable.php");
 
 }
 ?>
+
 
 
 <!DOCTYPE html>
@@ -35,35 +35,19 @@ header("Location: http://localhost/AdminLTE-master/pages/tables/catogerytable.ph
 
 </head>
 <body>
-  <?php
-require_once('./connect.php');
-
-if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["name"])){
-    $name=$_POST['name'];
-    $categories_img=$_POST['categories_img'];
-
-$query = 'INSERT INTO categories SET name = :name,categories_img = :categories_img';
-$statement=$db->prepare($query);
-$statement->bindValue(':name', $name);
-$statement->bindValue(':categories_img', $categories_img);
-$statement->execute();
-header("Location: http://localhost/AdminLTE-master/pages/tables/catogerytable.php");
-
-}
-?>
     <h1>Manage The categories</h1>
-<form method="POST">
+<form method="POST" enctype="multipart/form-data" action="uploadcategory.php">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">catogery Name:</label>
     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">categories img:</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="categories_img">
+    <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="categories_img">
   </div>
   
   
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
 </form>
 
 <script src="../../plugins/jquery/jquery.min.js"></script>
