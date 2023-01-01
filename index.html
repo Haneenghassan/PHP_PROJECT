@@ -25,6 +25,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -84,31 +86,17 @@
     - NOTIFICATION TOAST
   -->
 
-  <div class="notification-toast" data-toast>
+  <!-- <div class="notification-toast" data-toast>
 
     <button class="toast-close-btn" data-toast-close>
       <ion-icon name="close-outline"></ion-icon>
-    </button>
+    </button> -->
 
     <!-- <div class="toast-banner">
       <img src="./assets/images/products/jewellery-1.jpg" alt="Rose Gold Earrings" width="80" height="70">
     </div> -->
 
-    <div class="toast-detail">
-
-      <p class="toast-message">
-        Someone in new just bought
-      </p>
-
-      <p class="toast-title">
-        Rose Gold Earrings
-      </p>
-
-      <p class="toast-meta">
-        <time datetime="PT2M">2 Minutes</time> ago
-      </p>
-
-    </div>
+   
 
   </div>
 
@@ -371,7 +359,7 @@
             </div>
           </li>
 
-          <li class="menu-category">
+          <!-- <li class="menu-category">
             <a href="#" class="menu-title">kitchen</a>
 
             <ul class="dropdown-list">
@@ -393,9 +381,9 @@
               </li>
 
             </ul>
-          </li>
+          </li> -->
 
-          <li class="menu-category">
+          <!-- <li class="menu-category">
             <a href="#" class="menu-title">lighting</a>
 
             <ul class="dropdown-list">
@@ -417,9 +405,9 @@
               </li>
 
             </ul>
-          </li>
+          </li> -->
 
-          <li class="menu-category">
+          <!-- <li class="menu-category">
             <a href="#" class="menu-title">securty</a>
 
             <ul class="dropdown-list">
@@ -441,15 +429,15 @@
               </li>
 
             </ul>
-          </li>
+          </li> -->
 
 
           <li class="menu-category">
-            <a href="#" class="menu-title">Blog</a>
+            <a href="#" class="menu-title">About</a>
           </li>
 
           <li class="menu-category">
-            <a href="#" class="menu-title">Hot Offers</a>
+            <a href="#" class="menu-title">Contact</a>
           </li>
 
         </ul>
@@ -825,7 +813,7 @@
           - SIDEBAR
         -->
 
-        <div class="sidebar  has-scrollbar" data-mobile-menu>
+        <!-- <div class="sidebar  has-scrollbar" data-mobile-menu>
 
           <div class="sidebar-category">
 
@@ -1316,7 +1304,7 @@
 
           </div>
 
-        </div>
+        </div> -->
 
 
 
@@ -1326,17 +1314,59 @@
             - PRODUCT MINIMAL
           -->
 
-          <div class="product-minimal">
+          <div class="product-minimal ">
 
-            <div class="product-showcase">
+            <div class="product-showcase ">
 
-              <h2 class="title">New Arrivals</h2>
+              <h2 class="title " style=" text-align: center;font-size: 2.5rem;">Categories</h2>
 
               <div class="showcase-wrapper has-scrollbar">
 
                 <div class="showcase-container">
 
-                  <div class="showcase">
+                  <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                      <div class="card">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top"
+                          alt="Hollywood Sign on The Hill" />
+                        <div class="card-body">
+                          <h5 class="card-title">Kithchen</h5>
+                          <p class="card-text">
+                            Welcome to the smart home store for all things kitchen, where you'll find great prices on a variety of products to help you cook the perfect meal.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="card">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top"
+                          alt="Hollywood Sign on The Hill" />
+                        <div class="card-body">
+                          <h5 class="card-title"> Security Systems</h5>
+                          <p class="card-text">
+                            Smart home security systems allow users to remotely monitor and manage their homes in real-time, alerting homeowners of unexpected attempts to access the doors or windows.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="card">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top"
+                          alt="Hollywood Sign on The Hill" />
+                        <div class="card-body">
+                          <h5 class="card-title">Smart Lighting</h5>
+                          <p class="card-text">
+                            there are a variety of ways you can control your lights and devices—including voice, motion, touch, and more. Choose the products and control methods that work best for you.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+              
+                  </div>
+
+                  <!-- <div class="showcase">
 
                     <a href="#" class="showcase-img-box">
                       <img src="./assets/images/products/clothes-1.jpg" alt="relaxed short full sleeve t-shirt" width="70" class="showcase-img">
@@ -1530,13 +1560,13 @@
                 
                   </div>
                 
-                </div>
+                </div> -->
 
               </div>
 
             </div>
 
-            <div class="product-showcase">
+            <!-- <div class="product-showcase">
             
               <h2 class="title">Trending</h2>
             
@@ -1951,7 +1981,7 @@
             
               </div>
             
-            </div>
+            </div> -->
 
           </div>
 
@@ -3374,6 +3404,9 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
 </body>
 
