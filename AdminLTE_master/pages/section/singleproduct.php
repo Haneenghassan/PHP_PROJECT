@@ -9,6 +9,8 @@ $stmt= $db->prepare($query) ;
 $stmt->bindValue(':id', $id);
 $stmt->execute();
 $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +28,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
 <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
 
 <style>
-  body{background-color: #000}
+  body{background-color: white}
   .card{border:none}
   .product{background-color: #eee}.brand{font-size: 13px}.act-price{color:red;font-weight: 700}.dis-price{text-decoration: line-through}.about{font-size: 14px}.color{margin-bottom:10px}label.radio{cursor: pointer}label.radio input{position: absolute;top: 0;left: 0;visibility: hidden;pointer-events: none}label.radio span{padding: 2px 9px;border: 2px solid #ff0000;display: inline-block;color: #ff0000;border-radius: 3px;text-transform: uppercase}label.radio input:checked+span{border-color: #ff0000;background-color: #ff0000;color: #fff}.btn-danger{background-color: #ff0000 !important;border-color: #ff0000 !important}.btn-danger:hover{background-color: #da0606 !important;border-color: #da0606 !important}.btn-danger:focus{box-shadow: none}.cart i{margin-right: 10px}
   </style>
@@ -57,7 +59,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                           </span>
                                 <h5 class="text-uppercase"><?PHP echo $product['product_name']?></h5>
                                 <div class="price d-flex flex-row align-items-center"> <span class="act-price"><?PHP echo $product['price'] ?></span>
-                                    <div class="ml-2"> <small class="dis-price">$59</small> <span>40% OFF</span> </div>
+                                    <div class="ml-2"> <small class="dis-price">20</small> <span>40% OFF</span> </div>
                                 </div>
                             </div>
                             <p class="about"><?PHP echo $product['product_desc'] ?></p>
@@ -74,10 +76,12 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
 </div>
 <?php }?>
 
+<!-- code for acount how much order in our website -->
+
 <div>
    
    
-    <p>order number of products </p>
+    <p >order number of products </p>
     <?php
     $stmt =$db->prepare('SELECT COUNT(id) AS totalRows FROM order_list '); 
     $stmt->execute(); 
@@ -85,6 +89,51 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
     $totalRows = $row['totalRows'];
     
    echo $totalRows;
+    ?>
+      </div>
+
+      <!-- code for acount how much users in our website -->
+      <div>
+   
+   
+    <p > number of users  </p>
+    <?php
+    $stmt =$db->prepare('SELECT COUNT(id) AS totalRows FROM users '); 
+    $stmt->execute(); 
+    $row = $stmt->fetch(PDO::FETCH_ASSOC); 
+    $totalRows = $row['totalRows'];
+    
+   echo $totalRows;
+    ?>
+      </div>
+
+      <!-- code for acount how much products in our website -->
+      <div>
+   
+   
+    <p > number of products  </p>
+    <?php
+    $stmt =$db->prepare('SELECT COUNT(id) AS totalRows FROM products '); 
+    $stmt->execute(); 
+    $row = $stmt->fetch(PDO::FETCH_ASSOC); 
+    $totalRows = $row['totalRows'];
+    
+   echo $totalRows;
+    ?>
+
+     <!-- code for acount how much price after account -->
+      </div>
+
+      <p >discount </p>
+    <?php
+    $stmt =$db->prepare('SELECT price FROM products WHERE id= :id'); 
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+    $products= $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    echo $product['price'] - ($product['price'] * (50/100));
+    
+    
     ?>
       </div>
      
