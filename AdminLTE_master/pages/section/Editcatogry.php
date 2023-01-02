@@ -48,18 +48,24 @@ header("Location: http://localhost/AdminLTE-master/pages/tables/catogerytable.ph
 
 <body>
   <div class="container">
-    <h1>Edite The Employees</h1>
-<form method="POST">
+  <div class="container-fluid text-center"  style="margin-top:9%">
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-header " style="background-color:#adb5bd">
+                <h1 class="card-title " style="margin-left: 40% ; font-size:2.2rem">Edit Categories </h1>
+              </div>
+<form method="POST" enctype="multipart/form-data">
 <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">catogery Name:</label>
     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">categories img:</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="categories_img">
+    <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="categories_img">
   </div>
   
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
 </form>
 
 
