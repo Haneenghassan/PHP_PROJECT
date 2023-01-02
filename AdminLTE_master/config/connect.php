@@ -7,6 +7,7 @@ $password="";
 try
 {
     $db=new PDO($host,$username,$password);
+
 }
 catch(PDOException $e){
     $error_message="database error:";
