@@ -18,6 +18,8 @@ p{
     margin-top: 20px;
     color: rgb(80, 77, 77);
     font-size: 20px;
+    margin-bottom: 60px;
+    margin-top: 15px;
 }
 .container{
     display: flex;
@@ -86,16 +88,7 @@ p{
     height: 400px;
     right: 0;
 }
-.circle{
-    clip-path:circle(50% at 50% 50%);
-    background: #144780;
-    opacity: 0.9;
-    position: absolute;
-    bottom: 68px;
-    width: 150px;
-    height: 150px;
-    right: 94px;
-}
+
 .row_right_side{
     width: 1100px;
     padding: 30px; 
@@ -105,6 +98,10 @@ form{
     height: 100%;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 100px;
+}
+.section_contact {
+    margin: 80px;
 }
 .row_right_side label{
     width: 50%;
