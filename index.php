@@ -270,16 +270,16 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
         
       
                 <li class="menu-category">
-                  <a href="#" class="menu-title">About Us </a>
+                  <a href="./aboutUs/abouttt.html" class="menu-title">About Us </a>
                 </li>
       
       
                 <li class="menu-category">
-                  <a href="#" class="menu-title">Contact Us</a>
+                  <a href="./contactUs/conta.html" class="menu-title">Contact Us</a>
                 </li>
       
                 <li class="menu-category">
-                  <a href="#" class="menu-title">Hot Offers</a>
+                  <a href="./all_product.php" class="menu-title">All Product</a>
                 </li>
       
               </ul>
