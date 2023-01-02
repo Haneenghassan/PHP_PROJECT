@@ -25,7 +25,7 @@ p{
     margin: 50px 40px;
 }
 .row_left_side{
-    background-color: #3e2093;
+    background-color: #1853b2;
     color: #eee;
     width: 450px;
     padding: 30px;
@@ -88,7 +88,7 @@ p{
 }
 .circle{
     clip-path:circle(50% at 50% 50%);
-    background: #7e53f9;
+    background: #144780;
     opacity: 0.9;
     position: absolute;
     bottom: 68px;
@@ -120,7 +120,7 @@ form{
     font-size: 16px;
 }
 .row_right_side input:hover{
-    border-bottom: 2px solid #3e2093;
+    border-bottom: 2px solid #2059d4;
     cursor: pointer;
 }
 .checkbox_box{
@@ -157,7 +157,7 @@ form{
     border: 2px solid #ccc;
 }
 .box input:checked ~ .checkmark{
-    background: #3e2093;
+    background: #1051b2;
     border: none;
 }
 .checkmark:after {
@@ -191,7 +191,7 @@ form{
 .row_right_side button{
     width: 200px;
     height: 50px;
-    background-color: #3e2093;
+    background-color: #135aa6;
     border: none;
     outline: none;
     color: #fff;
