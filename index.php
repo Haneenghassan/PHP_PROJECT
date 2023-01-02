@@ -2,6 +2,7 @@
 
 include './AdminLTE_master/config/connect.php';
 
+session_start ();
 $query='SELECT * FROM categories LIMIT 3';
 $stmt= $db->prepare($query) ;
 $stmt->execute();
@@ -270,16 +271,16 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
         
       
                 <li class="menu-category">
-                  <a href="#" class="menu-title">About Us </a>
+                  <a href="./aboutUs/abouttt.html" class="menu-title">About Us </a>
                 </li>
       
       
                 <li class="menu-category">
-                  <a href="#" class="menu-title">Contact Us</a>
+                  <a href="./contactUs/conta.html" class="menu-title">Contact Us</a>
                 </li>
       
                 <li class="menu-category">
-                  <a href="#" class="menu-title">Hot Offers</a>
+                  <a href="./all_product.php" class="menu-title">All Product</a>
                 </li>
       
               </ul>
@@ -300,8 +301,8 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
           
 
           <button class="action-btn">
-            <ion-icon name="bag-handle-outline"></ion-icon>
-            <span class="count">0</span>
+            <a href="http://localhost/PHP_PROJECT/viewcart.php"><ion-icon name="bag-handle-outline"></ion-icon></a>
+            <span class="count"><?php echo count($_SESSION['cart']) ?></span>
           </button>
 
         </div>
@@ -790,7 +791,7 @@ foreach ($products as $product):
                       <ion-icon name="repeat-outline"></ion-icon>
                     </button>
               
-                   <a href="addtocart.php"> <button class="btn-action">
+                   <a href="addtocart.php?pro_id=<?php echo $product['id'] ?>&action=add"> <button class="btn-action">
                       <ion-icon name="bag-add-outline"></ion-icon>
                     </button> </a> 
                   </div>
@@ -812,8 +813,8 @@ foreach ($products as $product):
                   </div>
               
                   <div class="price-box">
-                    <p class="price">$78.00</p>
-                    <del>$85.00</del>
+                    <p class="price">$<?php echo $product['price_after']; ?></p>
+                    <del>$<?php echo $product['price']; ?></del>
                     <!-- <a href="./aboutus.html" class="addToCart"><button> Add to Cart </button></a> -->
                   </div>
                   
