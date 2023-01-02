@@ -199,7 +199,7 @@ $categories=$stmt->fetchAll(PDO::FETCH_ASSOC);
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" name="submit" class="btn btn-primary">Add</button>
+                  <button type="submit" name="submit" class="btn btn-primary">Edit</button>
                 </div>
               </form>
             </div>
@@ -216,7 +216,7 @@ $categories=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-
+</div>
 
 
   <!-- /.content-wrapper -->
