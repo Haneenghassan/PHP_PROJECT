@@ -676,11 +676,10 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: right;
 }
 
 .banner-content {
-  background: hsla(0, 0%, 100%, 0.8);
+  background: hsla(0, 70%, 34%, 0.8);
   position: absolute;
   bottom: 25px;
   left: 25px;
@@ -704,6 +703,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   text-transform: uppercase;
   line-height: 1;
   margin-bottom: 10px;
+
 }
 
 .banner-text { display: none; }
@@ -787,7 +787,14 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   text-transform: capitalize;
 }
 
-
+.banner-title {
+  color: var(--eerie-black);
+  font-size: var(--fs-1);
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 10px;
+  COLOR: WHITE;
+}
 
 
 
@@ -1402,9 +1409,8 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 
 .cta-container {
   position: relative;
-  aspect-ratio: 5 / 6;
+  aspect-ratio: 2 / 6;
   border-radius: var(--border-radius-md);
-  overflow: hidden;
   margin-bottom: 25px;
 }
 
@@ -1433,7 +1439,6 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   font-weight: var(--weight-600);
   text-transform: uppercase;
   width: max-content;
-  margin: auto;
   padding: 0 5px;
   border-radius: var(--border-radius-sm);
   margin-bottom: 5px;
@@ -1460,54 +1465,6 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   margin: auto;
 }
 
-
-
-
-
-/*-----------------------------------*\
-  #SERVICE
-\*-----------------------------------*/
-
-.service-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  padding: 30px 15px;
-  border: 1px solid var(--cultured);
-  border-radius: var(--border-radius-md);
-}
-
-.service-item {
-  min-width: 190px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.service-icon {
-  font-size: 35px;
-  color: var(--salmon-pink);
-  transition: var(--transition-timing);
-}
-
-.service-icon ion-icon { --ionicon-stroke-width: 25px; }
-
-.service-item:hover .service-icon { color: var(--eerie-black); }
-
-.service-title {
-  color: var(--sonic-silver);
-  font-size: var(--fs-7);
-  font-weight: var(--weight-600);
-  text-transform: capitalize;
-  margin-bottom: 5px;
-}
-
-.service-desc {
-  color: var(--sonic-silver);
-  font-size: var(--fs-9);
-}
 
 
 
