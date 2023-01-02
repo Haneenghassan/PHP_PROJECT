@@ -126,7 +126,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../../index3.html" class="nav-link">
+                <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/products/product.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Products</p>
                 </a>

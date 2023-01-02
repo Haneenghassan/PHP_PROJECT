@@ -167,10 +167,10 @@ $categories=$stmt->fetchAll(PDO::FETCH_ASSOC);
           <div class="col-md-4">
             <!-- start -->
             <div class="card" style="">
-              <img src="<?php echo $category['category_img'] ? "../../upload/$image" : '../../upload/IMG-63afcc3a25fe13.93785975.png';?>" height="250" class="card-img-top" alt="...">
+              <img src="<?php echo $category['category_img'] ? "../../upload/$image" : '../../upload/IMG-63afcc3a25fe13.93785975.png';?>" height="200" class="card-img-top" alt="...">
               <div class="card-body">
-                <h2 class="card-title"><?php echo $category['category_name'] ?></h2>
-                <p class="card-text">Some quick example text to build on the card title.</p>
+                <h2 class="card-title" style="font-size: 1.6rem;"><?php echo $category['category_name'] ?></h2>
+                <p class="card-text"></p>
                 <div class="">
                 <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/categories/Editcatogry.php?id=<?php echo $category['id'] ?>" class="btn btn-primary">Edit</a>
                 <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/categories/deletecatecory.php?id=<?php echo $category['id'] ?>" class="btn btn-danger">Delete</a>
