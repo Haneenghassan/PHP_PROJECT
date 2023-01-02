@@ -1,3 +1,24 @@
+<?php 
+
+include './AdminLTE_master/config/connect.php';
+
+$query='SELECT * FROM categories LIMIT 3';
+$stmt= $db->prepare($query) ;
+$stmt->execute();
+$categories=$stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+$query='SELECT * FROM products WHERE price != price_after LIMIT 8';
+$stmt= $db->prepare($query) ;
+$stmt->execute();
+$products=$stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// echo "<pre>";
+// print_r($products);
+// echo "</pre>";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -694,36 +715,18 @@
 
                               <div class="row row-cols-1 row-cols-md-3 g-4">
 
-
+<?php
+foreach ($categories as $category):
+?>
                                 <div class="col">
                                   <div class="card">
-                                    <img src="./img/kitchen/1.jpg" class="card-img-top" alt="...">
+                                    <img src="./AdminLTE_master/upload/<?php echo $category['category_img']; ?> " class="card-img-top" alt="name">
                                     <div class="card-body">
-                                      <h5 class="card-title">Kitchen</h5>
-                                      <p class="card-text">Welcome to the smart home store for all things kitchen, where you'll find great prices on a variety of products to help you cook the perfect meal.</p>
+                                      <h5 class="card-title"> <?php echo $category['category_name']; ?> </h5>
                                     </div>
                                   </div>
                                 </div>
-                  
-                                <div class="col">
-                                  <div class="card">
-                                    <img src="./img/light/2.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Security Systems</h5>
-                                      <p class="card-text">Smart home security systems allow users to remotely monitor and manage their homes in real-time, alerting homeowners of unexpected attempts to access the doors or windows.</p>
-                                    </div>
-                                  </div>
-                                </div>
-                  
-                                <div class="col">
-                                  <div class="card">
-                                    <img src="./img/securit/3.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Smart Lighting</h5>
-                                      <p class="card-text">there are a variety of ways you can control your lights and devices—including voice, motion, touch, and more. Choose the products and control methods that work best for you.</p>
-                                    </div>
-                                  </div>
-                                </div>
+<?php endforeach; ?>
 
                         </div>
                   
@@ -760,15 +763,17 @@
 
             <div class="product-grid">
 
+<?php
 
+foreach ($products as $product):
+?>
 
               <div class="showcase">
               
                 <div class="showcase-banner">
-                  <img src="./img/kitchen/1.jpg" alt="Better Basics French Terry Sweatshorts"
+                  <img src="./AdminLTE_master/upload/<?php echo $product['product_img']; ?>" alt="Better Basics French Terry Sweatshorts"
                     class="product-img default" width="300">
-                  <img src="./img/kitchen/1.jpg" alt="Better Basics French Terry Sweatshorts"
-                    class="product-img hover" width="300">
+                  <img src="./AdminLTE_master/upload/<?php echo $product['product_img']; ?>" alt="Better Basics French Terry Sweatshorts" class="product-img hover" width="300">
               
                   <p class="showcase-badge angle black">sale</p>
               
@@ -785,17 +790,17 @@
                       <ion-icon name="repeat-outline"></ion-icon>
                     </button>
               
-                    <button class="btn-action">
+                   <a href="addtocart.php"> <button class="btn-action">
                       <ion-icon name="bag-add-outline"></ion-icon>
-                    </button>
+                    </button> </a> 
                   </div>
                 </div>
               
                 <div class="showcase-content">
-                  <a href="#" class="showcase-category">shorts</a>
+                  <a href="#" class="showcase-category"><?php echo $product['product_name']; ?></a>
               
                   <h3>
-                    <a href="#" class="showcase-title">Better Basics French Terry Sweatshorts</a>
+                    <a href="#" class="showcase-title"><?php echo $product['product_desc']; ?></a>
                   </h3>
               
                   <div class="showcase-rating">
@@ -809,14 +814,16 @@
                   <div class="price-box">
                     <p class="price">$78.00</p>
                     <del>$85.00</del>
+                    <!-- <a href="./aboutus.html" class="addToCart"><button> Add to Cart </button></a> -->
                   </div>
-              
+                  
+
                 </div>
               
               </div>
 
+              <?php endforeach ?>
             </div>
-
 
 
 

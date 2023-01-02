@@ -839,7 +839,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
      object-position: right;
 }
 
-.smart_testt{
+.smart_testt {
   object-fit: cover;
   background-position: right;
   background-repeat: no-repeat;
@@ -2983,7 +2983,7 @@ footer {
 
   .product-featured .countdown-content { padding: 5px 10px; }
 
-  .product-grid { -ms-grid-columns: (1fr); grid-template-columns: repeat(3, 1fr); }
+  .product-grid {grid-template-columns: repeat(3, 1fr); }
 
 
 
@@ -3111,7 +3111,7 @@ footer {
 
   .product-featured .display-number { --fs-5: 1.125rem; }
 
-  .product-grid { -ms-grid-columns: (1fr) ; grid-template-columns : repeat(4, 1fr); }
+  .product-grid {  grid-template-columns : repeat(4, 1fr); }
 
 
 
