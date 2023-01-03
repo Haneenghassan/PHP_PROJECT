@@ -1,13 +1,15 @@
 <?php 
 include './AdminLTE_master/config/connect.php';
 session_start ();
-if (count($_SESSION['cart']) >0){
+if (isset($_SESSION['cart']) && count($_SESSION['cart']) >0){
 $keys = array_keys($_SESSION['cart']);
 $whereIn = implode(',', $keys);
 $query = "SELECT * FROM products WHERE id IN ($whereIn)";
 $stmt= $db->prepare($query) ;
 $stmt->execute();
 $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
+}else{
+    header("location: index.php");
 }
 ?>
 
@@ -82,17 +84,20 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                      </div>
                      <?php  
                      if (isset($products)){
-                        $res = 0;
+                        $total = 0;
                      foreach($products as $product){
-                            $res += $_SESSION['cart'][$product['id']]['qty'] * $product['price_after'];
+                            $total += $_SESSION['cart'][$product['id']]['qty'] * $product['price_after'];
                     }} ?>
                      <div class="order_total">
                          <div class="order_total_content text-md-right">
                              <div class="order_total_title">Order Total:</div>
-                             <div class="order_total_amount">$<?php echo $res ?? 0 ?></div>
+                             <div class="order_total_amount">$<?php echo $total ?? 0 ?></div>
                          </div>
                      </div>
-                     <div class="cart_buttons"><a href="http://localhost/PHP_PROJECT/index.php"><button type="button" class="button cart_button_clear">Continue Shopping</button></a>  <button type="button" class="button cart_button_checkout">Checkout</button> </div>
+                     <div class="cart_buttons">
+                        <a href="http://localhost/PHP_PROJECT/index.php"><button type="button" class="button cart_button_clear">Continue Shopping</button></a> 
+                        <a href="http://localhost/PHP_PROJECT/checkout.php?total=<?php echo $total ?? 0 ?>"> <button type="button" class="button cart_button_checkout">Checkout</button></a>
+                     </div>
                  </div>
              </div>
          </div>

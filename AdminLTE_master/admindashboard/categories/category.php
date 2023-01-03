@@ -1,5 +1,5 @@
 <?php 
-  require_once "../../config/connect.php";
+  include "../../config/connect.php";
   if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["category_name"]) && isset($_POST['submit']) && isset($_FILES['file'])){
     // echo "<pre>";
     // print_r($_POST);
