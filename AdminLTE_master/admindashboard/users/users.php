@@ -1,9 +1,12 @@
 <?php 
+
 require_once "../../config/connect.php";
+
 $query='SELECT * FROM users';
 $stmt= $db->prepare($query) ;
 $stmt->execute();
 $users=$stmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <?php include "../../components/header.php" ?>
@@ -41,7 +44,7 @@ $users=$stmt->fetchAll(PDO::FETCH_ASSOC);
               <table class="table table-sm">
                 <thead>
                   <tr>
-                  <th scope="col">ID</th>
+                  <!-- <th scope="col">ID</th> -->
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">address</th>
@@ -61,7 +64,7 @@ $users=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
                     <tr>
                     
-                        <th scope="row"><?PHP echo $user['id']?></th>
+                        <!-- <th scope="row"><?PHP echo $user['id']?></th> -->
                         <td><?PHP echo $user['user_name'] ?></td>
                         <td><?PHP echo $user['user_email']?></td>
                         <td><?PHP echo $user['address'] ?></td>
