@@ -301,8 +301,14 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
           
 
           <button class="action-btn">
-            <a href="http://localhost/PHP_PROJECT/viewcart.php"><ion-icon name="bag-handle-outline"></ion-icon></a>
-            <span class="count"><?php echo count($_SESSION['cart']) ?></span>
+            
+            <?php if (isset ($_SESSION['cart'])) {?>
+          <a href="http://localhost/PHP_PROJECT/viewcart.php"><ion-icon name="bag-handle-outline"></ion-icon></a>
+          <span class="count"><?php echo count($_SESSION['cart']) ?></span>
+           <?php } else { ?>
+            <a href=""><ion-icon name="bag-handle-outline"></ion-icon></a>
+<span class="count">0</span>
+          <?php }  ?>
           </button>
 
         </div>

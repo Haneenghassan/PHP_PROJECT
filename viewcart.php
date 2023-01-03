@@ -1,13 +1,14 @@
 <?php 
 include './AdminLTE_master/config/connect.php';
 session_start ();
+if (count($_SESSION['cart']) >0){
 $keys = array_keys($_SESSION['cart']);
 $whereIn = implode(',', $keys);
 $query = "SELECT * FROM products WHERE id IN ($whereIn)";
 $stmt= $db->prepare($query) ;
 $stmt->execute();
 $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
-
+}
 ?>
 
 
@@ -37,7 +38,10 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                  <div class="cart_container">
                      <div class="cart_title">Shopping Cart<small> (<?php echo count($_SESSION['cart']) ?> item in your cart) </small></div>
                      <div class="cart_items">
-                        <?php foreach($products as $product){ ?>
+                     
+                        <?php 
+                        if (isset($products)){
+                        foreach($products as $product){ ?>
                          <ul class="cart_list">
                              <li class="cart_item clearfix">
                                  <div class="cart_item_image"><img src="./AdminLTE_master/upload/<?php echo $product['product_img']; ?> " alt=""></div>
@@ -74,17 +78,18 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                                  </div>
                              </li>
                          </ul>
-                         <?php }?>
+                         <?php }}?>
                      </div>
                      <?php  
+                     if (isset($products)){
                         $res = 0;
                      foreach($products as $product){
                             $res += $_SESSION['cart'][$product['id']]['qty'] * $product['price_after'];
-                    } ?>
+                    }} ?>
                      <div class="order_total">
                          <div class="order_total_content text-md-right">
                              <div class="order_total_title">Order Total:</div>
-                             <div class="order_total_amount">$<?php echo $res ?></div>
+                             <div class="order_total_amount">$<?php echo $res ?? 0 ?></div>
                          </div>
                      </div>
                      <div class="cart_buttons"><a href="http://localhost/PHP_PROJECT/index.php"><button type="button" class="button cart_button_clear">Continue Shopping</button></a>  <button type="button" class="button cart_button_checkout">Checkout</button> </div>

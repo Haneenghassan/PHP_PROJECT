@@ -1,6 +1,7 @@
 <?php 
 
 include './AdminLTE_master/config/connect.php';
+session_start ();
 
 
 $query='SELECT * FROM products ';
@@ -293,8 +294,14 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
           
 
           <button class="action-btn">
-            <ion-icon name="bag-handle-outline"></ion-icon>
-            <span class="count">0</span>
+            
+            <?php if (isset ($_SESSION['cart'])) {?>
+          <a href="http://localhost/PHP_PROJECT/viewcart.php"><ion-icon name="bag-handle-outline"></ion-icon></a>
+          <span class="count"><?php echo count($_SESSION['cart']) ?></span>
+           <?php } else { ?>
+            <a href=""><ion-icon name="bag-handle-outline"></ion-icon></a>
+<span class="count">0</span>
+          <?php }  ?>
           </button>
 
         </div>
@@ -682,7 +689,7 @@ foreach ($products as $product):
                     class="product-img default" width="300">
                   <img src="./AdminLTE_master/upload/<?php echo $product['product_img']; ?>" alt="Better Basics French Terry Sweatshorts" class="product-img hover" width="300">
               
-                  <p class="showcase-badge angle black">sale</p>
+                  
               
                   <div class="showcase-actions">
                     <button class="btn-action">
@@ -720,7 +727,7 @@ foreach ($products as $product):
               
                   <div class="price-box">
                     <p class="price">$78.00</p>
-                    <del>$85.00</del>
+                    
                     <!-- <a href="./aboutus.html" class="addToCart"><button> Add to Cart </button></a> -->
                   </div>
                   
