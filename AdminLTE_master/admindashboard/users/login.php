@@ -1,5 +1,6 @@
 <?php 
     require_once "../../config/connect.php";
+    session_start();
     $password = $_POST["password"] ?? null;
     $user_email = $_POST["user_email"] ?? null;
     $query='SELECT * FROM users WHERE password= :password and user_email = :user_email';
@@ -29,6 +30,7 @@
         // $stmt->bindValue(':d', $d);
         // $stmt->bindValue(':password', $password);
         // $stmt->execute();
+        $_SESSION['user_id'] = $user['id'];
         if($user["is_admin"] == 1){
             header("Location:http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/users.php");
         }else{

@@ -1,5 +1,8 @@
 <?php 
 require_once "../../config/connect.php";
+
+session_start();
+// print_r($_SESSION);
     $id = $_GET['id'];
     $query='SELECT * FROM users WHERE id= :id';
     $stmt=$db->prepare($query);
@@ -33,21 +36,34 @@ require_once "../../config/connect.php";
     <nav class="navbar navbar-expand navbar-white navbar-light">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-          </li>
-          <li class="nav-item d-none d-sm-inline-block">
+          </li> -->
+          <!-- <li class="nav-item d-none d-sm-inline-block">
             <a href="../../index3.html" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item d-none d-sm-inline-block">
+          </li> -->
+          <!-- <li class="nav-item d-none d-sm-inline-block">
             <a href="#" class="nav-link">Contact</a>
+          </li> -->
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="http://localhost/PHP_PROJECT/" class="nav-link">Home</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+              <i class="fas fa-expand-arrows-alt"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+              <i class="fas fa-th-large"></i>
+            </a>
           </li>
         </ul>
     
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
           <!-- Navbar Search -->
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" data-widget="navbar-search" href="#" role="button">
               <i class="fas fa-search"></i>
             </a>
@@ -66,8 +82,10 @@ require_once "../../config/connect.php";
                 </div>
               </form>
             </div>
+          </li> -->
+          <!-- <li class="nav-item d-none d-sm-inline-block">
+            <a href="../../index3.html" class="nav-link">Home</a>
           </li>
-    
             <li class="nav-item">
             <a class="nav-link" data-widget="fullscreen" href="#" role="button">
               <i class="fas fa-expand-arrows-alt"></i>
@@ -77,7 +95,7 @@ require_once "../../config/connect.php";
             <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
               <i class="fas fa-th-large"></i>
             </a>
-          </li>
+          </li> -->
         </ul>
       </nav>
 
@@ -109,7 +127,7 @@ require_once "../../config/connect.php";
                 </li>
               </ul>
 
-              <!-- <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a> -->
+              <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/update_user.php?id=<?php echo $_SESSION['user_id']; ?>" class="btn btn-primary btn-block"><b>Edit</b></a>
             </div>
             <!-- /.card-body -->
           </div>
