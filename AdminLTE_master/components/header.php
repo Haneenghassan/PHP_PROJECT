@@ -151,7 +151,7 @@
 
 
           <li class="nav-item">
-            <a href="../admindashboard/users/static.php" class="nav-link">
+            <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/static.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Most Product Selling
@@ -160,7 +160,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../admindashboard/users/static1.php" class="nav-link">
+            <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/static1.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Most Product in Many Order
@@ -169,7 +169,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../admindashboard/users/static2.php" class="nav-link">
+            <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/static2.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Loyal Client
