@@ -3,17 +3,20 @@
 include './AdminLTE_master/config/connect.php';
 
 session_start ();
-// session_destroy();
 // print_r($_SESSION);
 
-$query='SELECT * FROM categories LIMIT 3';
-$stmt= $db->prepare($query) ;
+$category = $_GET['category'];
+
+$query="SELECT * FROM categories WHERE category_name = :category_name";
+$stmt= $db->prepare($query);
+$stmt->bindValue(':category_name', $category);
 $stmt->execute();
-$categories=$stmt->fetchAll(PDO::FETCH_ASSOC);
+$id=$stmt->fetch(PDO::FETCH_ASSOC)['id'];
+// print_r($id);
 
-
-$query='SELECT * FROM products WHERE price != price_after LIMIT 8';
+$query="SELECT * FROM products WHERE category_id = :category_id";
 $stmt= $db->prepare($query) ;
+$stmt->bindValue(':category_id', $id);
 $stmt->execute();
 $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -106,7 +109,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                   <a href="#Cat" class="menu-title">Categories</a>
       
                   <div class="dropdown-panel">
-                    <ul class="dropdown-panel-list">
+                  <ul class="dropdown-panel-list">
                       <li class="menu-title">
                         <a href="http://localhost/PHP_PROJECT/display.php?category=light"> Light</a>
                       </li>
@@ -132,11 +135,11 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                 <li class="menu-category">
                   <a href="./contactUs/conta.html" class="menu-title">Contact Us</a>
                 </li>
-        <?php if(isset($_SESSION['user_id'])){ ?>
+      
                 <li class="menu-category">
-                  <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/users.php" class="menu-title">dashboard</a>
+                  <a href="./all_product.php" class="menu-title">All Product</a>
                 </li>
-      <?php } ?>
+      
               </ul>
       
             </div>
@@ -459,161 +462,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
     - MAIN
   -->
 
-  <main>
 
-    <!--
-      - BANNER
-    -->
-
-    <div class="banner">
-
-      <div class="container">
-
-        <div class="slider-container has-scrollbar">
-
-          <div class="slider-item">
-
-            <img src="./images/smart-speaker-house-control-innovative-technology.jpg" alt="women's latest fashion sale" class="banner-img">
-
-            <div class="banner-content">
-
-              <!-- <p class="banner-subtitle">Trending item</p> -->
-
-              <h2 class="banner-title">It's Time for smart living</h2>
-
-              <p class="banner-text">
-                starting at &dollar; <b>50</b>.00
-              </p>
-
-              <a href="./images/AmroSalah.png" class="banner-btn">Shop now</a>
-
-            </div>
-
-          </div>
-
-          <div class="slider-item">
-
-            <img src="./images/smart-home-system-mobile-phone-screen.jpg" alt="modern sunglasses" class="banner-img" class="smart_testt">
-
-            <div class="banner-content">
-
-              <p class="banner-subtitle">Trending accessories</p>
-
-              <h2 class="banner-title">Modern sunglasses</h2>
-
-              <p class="banner-text">
-                starting at &dollar; <b>15</b>.00
-              </p>
-
-              <a href="#" class="banner-btn">Shop now</a>
-
-            </div>
-
-          </div>
-
-          <div class="slider-item">
-
-            <img src="./images/person-holding-mobile-phone-with-high-tech-application-smart-house-features-controlling-lights-with-wireless-device.jpg" alt="new fashion summer sale" class="banner-img">
-
-            <div class="banner-content">
-
-              <p class="banner-subtitle">Sale Offer</p>
-
-              <h2 class="banner-title">New fashion summer sale</h2>
-
-              <p class="banner-text">
-                starting at &dollar; <b>29</b>.99
-              </p>
-
-              <a href="#" class="banner-btn">Shop now</a>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-
-
-    <!--
-      - PRODUCT
-    -->
-
-    <div class="product-container">
-
-      <div class="container">
-
-        <div class="product-box">
-
-
-
-
-          <!--
-            - PRODUCT FEATURED
-          -->
-
-  
-
-
-
-
-
-          <div class="product-box">
-
-                      <!--
-                        - PRODUCT MINIMAL
-                      -->
-            
-                      <div class="product-minimal ">
-            
-                        <div class="product-showcase ">
-            
-                          <h2 class="title " style=" text-align: center;font-size: 2.5rem;">Categories</h2>
-            
-                          <div class="showcase-wrapper has-scrollbar">
-            
-                            <div class="showcase-container">
-            
-
-
-                              <div class="row row-cols-1 row-cols-md-3 g-4">
-
-<?php
-foreach ($categories as $category):
-?>
-                                <div class="col">
-                                  <div class="card">
-                                    <img src="./AdminLTE_master/upload/<?php echo $category['category_img']; ?> " class="card-img-top" alt="name">
-                                    <div class="card-body">
-                                      <h5 class="card-title"> <?php echo $category['category_name']; ?> </h5>
-                                    </div>
-                                  </div>
-                                </div>
-<?php endforeach; ?>
-
-                        </div>
-                  
-
-
-
-
-
-
-
-                        
-          
-                                </div>
-                        
-                              </div>
-                        
-                            </div>
-
-          </div>
 
 
 
@@ -625,9 +474,9 @@ foreach ($categories as $category):
           <!--
             - PRODUCT GRID
           -->
-          <div class="product-main">
+          <div class="product-main mt-5">
 
-            <h2 class="title">New Products</h2>
+            <h2 class="title"><?php echo $_GET['category'] ?></h2>
 
             <div class="product-grid">
 

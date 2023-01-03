@@ -43,7 +43,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index.php" class="nav-link">Home</a>
+        <a href="http://localhost/PHP_PROJECT/index.php" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -211,20 +211,20 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="http://localhost/PHP_PROJECT/AdminLTE_master/pages/section/catogerytable.php" class="nav-link">
+                <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/categories/categroy.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>catogories</p>
                 </a>
               </li>
              
               <li class="nav-item">
-                <a href="pages/charts/inline.html" class="nav-link">
+                <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/users.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Poducts</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="http://localhost/PHP_PROJECT/AdminLTE_master/pages/section/users/users.php" class="nav-link">
+                <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/products/product.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Users</p>
                 </a>
