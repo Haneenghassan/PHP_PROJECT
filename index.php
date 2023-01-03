@@ -132,11 +132,18 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                 <li class="menu-category">
                   <a href="./contactUs/conta.html" class="menu-title">Contact Us</a>
                 </li>
-        <?php if(isset($_SESSION['user_id'])){ ?>
+        <?php if(isset($_SESSION['user_id'])){ 
+          $query='SELECT * FROM users where id = :id';
+          $stmt= $db->prepare($query) ;
+          $stmt->bindValue(':id', $_SESSION['user_id']);
+          $stmt->execute();
+          $user=$stmt->fetch(PDO::FETCH_ASSOC);
+            if($user['is_admin'] == 1){
+          ?>
                 <li class="menu-category">
                   <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/users.php" class="menu-title">dashboard</a>
                 </li>
-      <?php } ?>
+      <?php }} ?>
               </ul>
       
             </div>
