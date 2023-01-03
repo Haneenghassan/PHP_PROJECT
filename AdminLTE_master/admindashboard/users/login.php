@@ -32,7 +32,9 @@
         if($user["is_admin"] == 1){
             header("Location:http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/users.php");
         }else{
-            echo "hello " . $user["user_name"] . "<br>";
+            // echo "hello " . $user["user_name"] . "<br>";
+            header("Location:http://localhost/PHP_PROJECT/index.php");
+            
         }
     }
 ?>
