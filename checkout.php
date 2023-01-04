@@ -48,6 +48,7 @@ $sql = "$sql;";
 echo $sql;
 $stmt= $db->prepare($sql);
 $stmt->execute();
+// exit;
 unset($_SESSION['cart']);
 
 header("location: viewcart.php");
