@@ -26650,7 +26650,9 @@ body.text-sm .input-group-text {
 }
 
 .card-primary:not(.card-outline) > .card-header {
-  background-color: #007bff;
+  /* background-color: #007bff; */
+  background-color: red;
+
 }
 
 .card-primary:not(.card-outline) > .card-header,
