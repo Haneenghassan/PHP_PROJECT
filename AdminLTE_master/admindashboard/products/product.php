@@ -3,10 +3,23 @@
   // echo "price" . $price . "<br>";
   // echo "discount " . $discount . "<br>";
   // echo "price after" . $price_after . "<br>";
+  // echo "<pre>";
+  // print_r($_POST);
+  // echo "</pre>";
+  $display = true;
+  if(isset($_POST["display"])){
+    $display = false;
+  }
+  if(isset($_GET["display"])){
+    $display = $_GET["display"];
+  }
+
   if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["product_name"]) && isset($_POST['submit']) && isset($_FILES['file'])){
     // echo "<pre>";
-    //   print_r($_POST);
-    //   echo "</pre>";
+      // print_r($_POST);
+      // echo "</pre>";
+      // var_dump($display);
+
     //   echo "<pre>";
     //   print_r($_FILES['file']);
     //   echo "</pre>";
@@ -127,12 +140,12 @@
             <!-- start -->
               <!-- general form elements -->
       <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Add product</h3>
+              <div class="card-header text-center">
+                <a href="./show.php"><h3 class="card-title text-center" id="showPorductContainer">Add product</h3></a>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="" method="post" enctype="multipart/form-data">
+              <form action="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/products/product.php" method="post" enctype="multipart/form-data" id="porductContainer" style="<?php echo $display ? "display:block" : "display:none" ?>">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">product Name</label>
@@ -141,6 +154,10 @@
                   <div class="form-group">
                     <label for="exampleInputEmail1">product Description</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" name="product_desc" placeholder="Enter product">
+                  </div>
+                  <div class="form-group">
+                    <!-- <label for="exampleInputEmail1">product Description</label> -->
+                    <input type="hidden" class="form-control" id="exampleInputEmail1" name="display" value="true">
                   </div>
                   
                   <div class="form-group">
@@ -267,4 +284,30 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-<?php include  "../../components/footer.php" ?>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="float-right d-none d-sm-block">
+      <b>Version</b> 3.2.0
+    </div>
+    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="./product.js"></script>
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+</body>
+</html>
