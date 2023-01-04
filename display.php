@@ -73,7 +73,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
     - HEADER
   -->
 
-  <header>
+  <header >
 
 
 
@@ -102,7 +102,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
               <ul class="desktop-menu-category-list">
       
                 <li class="menu-category">
-                  <a href="#" class="menu-title">Home</a>
+                  <a href="http://localhost/PHP_PROJECT/" class="menu-title">Home</a>
                 </li>
       
                 <li class="menu-category">
@@ -137,7 +137,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                 </li>
       
                 <li class="menu-category">
-                  <a href="./all_product.php" class="menu-title">All Product</a>
+                  <a href="./all_product.php" class="menu-title">Shop</a>
                 </li>
       
               </ul>
@@ -474,7 +474,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
           <!--
             - PRODUCT GRID
           -->
-          <div class="product-main mt-5">
+          <div class="product-main mt-5" style="width: 80%; margin: 0 auto">
 
             <h2 class="title"><?php echo $_GET['category'] ?></h2>
 

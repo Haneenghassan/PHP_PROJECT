@@ -132,6 +132,9 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                 <li class="menu-category">
                   <a href="./contactUs/conta.html" class="menu-title">Contact Us</a>
                 </li>
+                <li class="menu-category">
+                  <a href="./all_product.php" class="menu-title">Shop</a>
+                </li>
         <?php if(isset($_SESSION['user_id'])){ 
           $query='SELECT * FROM users where id = :id';
           $stmt= $db->prepare($query) ;
@@ -144,6 +147,8 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                   <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/users.php" class="menu-title">dashboard</a>
                 </li>
       <?php }} ?>
+
+                
               </ul>
       
             </div>
@@ -634,7 +639,7 @@ foreach ($categories as $category):
           -->
           <div class="product-main">
 
-            <h2 class="title">New Products</h2>
+            <h2 class="title">PRODUCT ON SALES</h2>
 
             <div class="product-grid">
 
