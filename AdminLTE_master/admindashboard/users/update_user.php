@@ -28,7 +28,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["user_name"])  && isset(
     $fileActualExt = strtolower(end($fileExt));
     $allowed = array('jpg', 'jpeg', 'png', 'pdf');
     if(in_array($fileActualExt, $allowed)){
-        if($fileError === 0){
+
+        if($fileError === 0) {
             if($fileSize < 10000000){
                 $fileNameNew = uniqid('IMG-', true). "." . $fileActualExt;
                 $fileDestination = '../../upload/'.$fileNameNew;
@@ -40,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["user_name"])  && isset(
                 $statement->bindValue(':id', $id);
                 $statement->execute();
                 header("location: users.php");
-            }else{
+            }else {
                 echo "your file is too big!";
             }
         }else{

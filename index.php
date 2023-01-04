@@ -906,15 +906,15 @@ foreach ($products as $product):
           </li>
         
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Product 1 </a>
+            <a href="#" class="footer-nav-link"> SHARP DISH WASHER </a>
           </li>
         
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Product 2 </a>
+            <a href="#" class="footer-nav-link"> LED DESK LIGHT TABLE LAMP </a>
           </li>
         
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Product 3 </a>
+            <a href="#" class="footer-nav-link"> EUFY SECURITY SOLOCAM E40 </a>
           </li>
         
         </ul>
