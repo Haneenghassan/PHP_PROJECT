@@ -615,15 +615,7 @@ foreach ($categories as $category):
 <?php endforeach; ?>
 
                         </div>
-                  
 
-
-
-
-
-
-
-                        
           
                                 </div>
                         
