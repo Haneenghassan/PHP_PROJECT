@@ -2,6 +2,9 @@
 
 session_start ();
 
+$user_id= $_SESSION['user_id'];
+
+
 $id = $_GET['id'];
 
 
@@ -52,6 +55,7 @@ $categories=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <style>
    .card{border:none}.product{background-color: #eee}.brand{font-size: 13px}.act-price{color:red;font-weight: 700}.dis-price{text-decoration: line-through}.about{font-size: 14px}.color{margin-bottom:10px}label.radio{cursor: pointer}label.radio input{position: absolute;top: 0;left: 0;visibility: hidden;pointer-events: none}label.radio span{padding: 2px 9px;border: 2px solid #ff0000;display: inline-block;color: #ff0000;border-radius: 3px;text-transform: uppercase}label.radio input:checked+span{border-color: #ff0000;background-color: #ff0000;color: #fff}.btn-danger{background-color: #ff0000 !important;border-color: #ff0000 !important}.btn-danger:hover{background-color: #da0606 !important;border-color: #da0606 !important}.btn-danger:focus{box-shadow: none}.cart i{margin-right: 10px}
+   
 </style>
 <body>
 <header>
@@ -449,7 +453,7 @@ $categories=$stmt->fetchAll(PDO::FETCH_ASSOC);
 <div class="container mt-5 mb-5">
         <div class="row d-flex justify-content-center">
             <div class="col-md-10">
-                <div class="card">
+                <div class="card shadow-sm p-3 mb-5 bg-body-tertiary rounded" style="margin-left: -13%;">
                     <div class="row">
                         <div class="col-md-6">
                         <?php
@@ -457,7 +461,7 @@ $categories=$stmt->fetchAll(PDO::FETCH_ASSOC);
         ?>
 
                             <div class="images p-3" >
-                                <div class="text-center "> <img id="main-image" style="  border: 5px solid blue;" src="./AdminLTE_master/upload/<?php echo $product['product_img']; ?>" width="300" /> </div>
+                                <div class="text-center "> <img id="main-image" src="./AdminLTE_master/upload/<?php echo $product['product_img']; ?>" width="300" /> </div>
                                
                             </div>
                         </div>
@@ -469,12 +473,16 @@ $categories=$stmt->fetchAll(PDO::FETCH_ASSOC);
                               <?php }?>
                                     <h5 class="text-uppercase"><?PHP echo $product['product_name']?></h5>
                                     <div class="price d-flex flex-row align-items-center"> <span class="act-price"><?PHP echo $product['price_after'] ?></span>
-                                        <div class="ml-2" style="width: 50%;"> <small style="margin-left:3.5%;" class="dis-price"><?PHP echo $product['price'] ?></small><span  style="margin-left: 9.5%;"><?PHP echo $product['discount'] ?>% OFF</span> </div>
-                                    </div>
-                                </div>
-                                <p class="about"><?PHP echo $product['product_desc'] ?></p>
+                                       <div class="ml-2" style="width: 50%;"> <small style="margin-left:3.5%;" class="dis-price"><?PHP echo $product['price'] ?></small><span  style="margin-left: 9.5%;"><?PHP echo $product['discount'] ?>% OFF</span> </div>
+                                    
+                                     
+                                      </div>
+                                      <p class="about"><?PHP echo $product['product_desc'] ?></p>  
+                                      <div class="cart mt-4 align-items-center"> <button class="btn btn-primary text-uppercase mr-2 px-4">Add to cart</button> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>                               
+                                      </div>
                                 
-                                <div class="cart mt-4 align-items-center"> <button class="btn btn-primary text-uppercase mr-2 px-4">Add to cart</button> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>
+                                
+                                
                             </div>
                         </div>
                     </div>
@@ -485,6 +493,111 @@ $categories=$stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php }
   
     ?>
+
+
+
+<!-- review section -->
+
+<?php
+$query = "SELECT * 
+               FROM reviews 
+               INNER JOIN users ON (reviews.user_id = users.id) WHERE product_id = ? ";
+                $stmt = $db->prepare($query);
+                $stmt->execute([$id]); ?>
+
+                  <section class="shadow-sm p-3 mb-5 bg-body-tertiary rounded" style="background-color:#eee;width:75%;margin-left:6%;border-radius: 5px;">
+                  <h1 class ="text-center">Review For Products</h1>
+  <div class="container my-5 py-5 " >
+    <div class="row d-flex justify-content-center" style="margin-top: -8%;">
+      <div class="col-md-12 col-lg-12 ">
+        <div class="card text-dark ">
+          <div class="card-body p-4 ">
+            <h4 class="mb-0" style="font-size: 22px;">Recent Comments</h4>
+
+
+
+            <?php while ($comment = $stmt->fetch()) {
+            $comment_id = $comment['id'];
+            $user_id = $comment['user_id'];
+            $product_id = $comment['product_id'];
+            $comment_date = $comment['review_date'];
+            $comment_content = $comment['comment'];
+            $user_name = $comment['user_name'];
+            ?>
+
+
+
+            <div class="card-body p-4">
+            <div class="d-flex flex-start">
+              <div>
+
+
+                <h6 class="fw-bold mb-1" style="font-size: 19px;"><?php echo $user_name ?></h6>
+
+                <div class="d-flex align-items-center mb-3">
+                  <p class="mb-0" style="font-size: 12px;">
+                  
+                  
+                  <?php echo $comment_date ?>
+
+
+                  </p>
+                </div>
+                <p class="mb-0" style="font-size: 18px;">
+                
+                
+                <?php echo  $comment_content; ?>
+
+
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-0" /><?php } ?>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <?php
+         if(isset($_SESSION['user_id'])){ ?>
+            <form action="" method="post"  >
+            <div class="card-body p-4 " >
+               <div class="d-flex flex-start" style="margin-left: -3%;">
+                  <textarea style="width:1300px; border:2px solid silver"  class="form-control text-center" name="comment_text" cols="12"  rows="3" placeholder="Add your comment" value=""></textarea>
+               </div>
+            </div>
+            <div class="col-md-12 text-right"  style="margin-left: 2%;">
+               <button type="submit" name="submit_comment" class="btn submit_btn" style="background-color: #0d6efd; font-size : 20px;color:white;">
+                  Submit Now
+               </button>
+            </div>
+            </form>
+         <?php } ?> 
+
+         <?php 
+         if (isset($_POST['submit_comment'])) {
+            if (isset($_SESSION['user_id'])) {
+               $comment_text = $_POST['comment_text'];
+               $sqlInserComment = "INSERT INTO reviews (user_id,product_id,comment,review_date) 
+                                 VALUES ('$user_id','$id','$comment_text ',NOW())";
+               $stmt = $db->query($sqlInserComment);
+               $return_to_page =  $_SERVER['PHP_SELF'];
+               
+              //  header("location:./single.php?id=$id");
+              echo "<script>window.location='./single.php?id=$id'</script>";
+            }
+         }
+         ?> 
+
+
+</section>
+
+
+
 
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
