@@ -28,6 +28,8 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
     header("location: index.php");
 }
 
+// echo "<script>10</script>";
+// echo "<script>windo.herf = index.php</script>"
 
 // if (isset($_GET['id'])) {
 //     $proid = $_GET['id'];
@@ -208,12 +210,8 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                                      <form action="" method="post" class="row">
                                      <div class="cart_item_quantity cart_info_col">
                                          <div class="cart_item_title">Quantity</div>
-                                         <input type="text" class="cart_item_text" name="qty" value="<?php echo $_SESSION['cart'][$product['id']]['qty'] ?>" style="width: 40px; display:block; "></input>
+                                         <input type="text" class="cart_item_text" name="qty" value="<?php echo $_SESSION['cart'][$product['id']]['qty'] ?>" style="width: 40px; display:block;"></input>
                                          <input type="hidden" class="cart_item_text" name="pro_id" value="<?php echo $_SESSION['cart'][$product['id']]['pro_id'] ?>" style="width: 40px"></input>
-                                     </div>
-                                     <div class="cart_item_quantity cart_info_col">
-                                         <div class="cart_item_title">Update</div>
-                                         <input type="submit"  class="cart_item_text"></input>
                                      </div>
                                      </form>
                                      <div class="cart_item_quantity cart_info_col">
