@@ -479,7 +479,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
       <img src="./images/smart-home-system-mobile-phone-screen.jpg" class="d-block w-100 banner-img" alt="...">
       <div class="banner-content">
 
-              <p class="banner-subtitle">Trending accessories</p>
+              <p class="banner-subtitle"></p>
 
               <h2 class="banner-title">Modern sunglasses</h2>
 
