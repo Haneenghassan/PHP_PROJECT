@@ -27,7 +27,7 @@ p{
     margin: 50px 40px;
 }
 .row_left_side{
-    background-color: #1853b2;
+    background-color: #2e5cd3;
     color: #eee;
     width: 450px;
     padding: 30px;
@@ -41,7 +41,7 @@ p{
 }
 .row_left_side p{
     text-align: left;
-    color: rgb(175, 175, 175);
+    color: rgb(255, 255, 255);
     font-size: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -54,7 +54,7 @@ p{
 .row_left_side i{
     display: flex;
     padding: 30px 0;
-    color: #fa949d;;
+    color: #fa949c;;
 }
 .row_left_side i span{
     margin-left: 20px;
@@ -76,12 +76,12 @@ p{
 }
 .social_icon i:hover{
     border-radius: 20px;
-    background-color: #fa949d;
+    background-color: #f3a9af;
     color: #fff;
 }
 .semi_circle{
     clip-path: circle(50.3% at 100% 100%);
-    background: #fa949d;
+    background: #fa949c00;
     position: absolute;
     bottom: 0;
     width: 400px;
@@ -101,7 +101,7 @@ form{
     margin-bottom: 100px;
 }
 .section_contact {
-    margin: 80px;
+    margin: 10px;
 }
 .row_right_side label{
     width: 50%;
@@ -117,7 +117,7 @@ form{
     font-size: 16px;
 }
 .row_right_side input:hover{
-    border-bottom: 2px solid #2059d4;
+    border-bottom: 2px solid #2e5cd3;
     cursor: pointer;
 }
 .checkbox_box{
@@ -179,7 +179,7 @@ form{
     height: 80px;
     resize: none;
     border: none;
-    border-bottom: 1px solid rgb(149, 149, 149);
+    border-bottom: 1px solid rgb(224, 12, 12);
     outline: none;
     font-size: 18px;
     margin-bottom: 20px;
@@ -188,7 +188,7 @@ form{
 .row_right_side button{
     width: 200px;
     height: 50px;
-    background-color: #135aa6;
+    background-color: #2e5cd3;
     border: none;
     outline: none;
     color: #fff;
