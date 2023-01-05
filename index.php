@@ -477,7 +477,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
       - BANNER
     -->
 
-    <div class="banner">
+    <!-- <div class="banner">
 
       <div class="container">
 
@@ -489,7 +489,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
             <div class="banner-content">
 
-              <!-- <p class="banner-subtitle">Trending item</p> -->
+             
 
               <h2 class="banner-title">It's Time for smart living</h2>
 
@@ -547,8 +547,67 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
       </div>
 
-    </div>
+    </div> -->
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item  slider-item">
+      <img src="./images/smart-home-system-mobile-phone-screen.jpg" class="d-block w-100 banner-img" alt="...">
+      <div class="banner-content">
 
+              <p class="banner-subtitle">Trending accessories</p>
+
+              <h2 class="banner-title">Modern sunglasses</h2>
+
+              <p class="banner-text">
+                starting at &dollar; <b>15</b>.00
+              </p>
+
+              <a href="#" class="banner-btn">Shop now</a>
+
+            </div>
+    </div>
+    <div class="carousel-item slider-item">
+      <img src="./images/person-holding-mobile-phone-with-high-tech-application-smart-house-features-controlling-lights-with-wireless-device.jpg" class="d-block w-100 banner-img" alt="...">
+      <div class="banner-content">
+
+              <p class="banner-subtitle">Trending accessories</p>
+
+              <h2 class="banner-title">Modern sunglasses</h2>
+
+              <p class="banner-text">
+                starting at &dollar; <b>15</b>.00
+              </p>
+
+              <a href="#" class="banner-btn">Shop now</a>
+
+            </div>
+    </div>
+    <div class="carousel-item active slider-item">
+      <img src="./images/smart-speaker-house-control-innovative-technology.jpg" class="d-block w-100 banner-img" alt="...">
+      <div class="banner-content">
+
+              <p class="banner-subtitle">Trending accessories</p>
+
+              <h2 class="banner-title">Modern sunglasses</h2>
+
+              <p class="banner-text">
+                starting at &dollar; <b>15</b>.00
+              </p>
+
+              <a href="#" class="banner-btn">Shop now</a>
+
+            </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
 
 
