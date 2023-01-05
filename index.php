@@ -159,7 +159,6 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                 '<li class="menu-category">
                   <a href="destroysession.php" class="menu-title">Logout</a>
                 </li>';
-                
               }}
               ?>
 
