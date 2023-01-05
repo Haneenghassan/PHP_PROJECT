@@ -1,5 +1,5 @@
 <?php
-$host="mysql:host=localhost;dbname=home_power1;";
+$host="mysql:host=localhost;dbname=home_power;";
 $username="root";
 $password="";
 
