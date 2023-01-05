@@ -49,7 +49,6 @@ $users=$stmt->fetchAll(PDO::FETCH_ASSOC);
                     <th scope="col">Email</th>
                     <th scope="col">address</th>
                     <th scope="col">phone</th>
-                    <th scope="col">password</th>
                     <th scope="col">Admin</th>
                     <th scope="col">Action</th>
                   </tr>
@@ -69,7 +68,6 @@ $users=$stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td><?PHP echo $user['user_email']?></td>
                         <td><?PHP echo $user['address'] ?></td>
                         <td><?PHP echo $user['phone'] ?></td>
-                        <td><?PHP echo $user['password']?></td>
                         <td><?PHP echo $user['is_admin'] ? "super user" : "user" ?></td>
 
                         <td>

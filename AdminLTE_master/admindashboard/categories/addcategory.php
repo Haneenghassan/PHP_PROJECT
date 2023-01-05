@@ -13,6 +13,7 @@ $statement->execute();
 header("Location: http://localhost/AdminLTE-master/pages/tables/catogerytable.php");
 
 }
+
 ?>
 
 

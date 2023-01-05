@@ -128,6 +128,9 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                 <li class="menu-category">
                   <a href="./contactUs/conta.html" class="menu-title">Contact Us</a>
                 </li>
+                <li class="menu-category">
+                  <a href="./all_product.php" class="menu-title">Shop</a>
+                </li>
         <?php if(isset($_SESSION['user_id'])){ 
           $query='SELECT * FROM users where id = :id';
           $stmt= $db->prepare($query) ;
@@ -140,6 +143,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                   <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/users.php" class="menu-title">dashboard</a>
                 </li>
       <?php }} ?>
+
 
 
             
@@ -161,6 +165,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                 </li>';
               }}
               ?>
+
 
               </ul>
       
@@ -486,41 +491,29 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
   <main>
 
-    <!--
-      - BANNER
-    -->
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item  slider-item">
+      <img src="./images/smart-home-system-mobile-phone-screen.jpg" class="d-block w-100 banner-img" alt="...">
+      <div class="banner-content">
 
-    <div class="banner">
+              <p class="banner-subtitle">Trending accessories</p>
 
-      <div class="container">
-
-        <div class="slider-container has-scrollbar">
-
-          <div class="slider-item">
-
-            <img src="./images/smart-speaker-house-control-innovative-technology.jpg" alt="women's latest fashion sale" class="banner-img">
-
-            <div class="banner-content">
-
-              <!-- <p class="banner-subtitle">Trending item</p> -->
-
-              <h2 class="banner-title">It's Time for smart living</h2>
+              <h2 class="banner-title">Modern sunglasses</h2>
 
               <p class="banner-text">
+
                 starting at JOD <b>50</b>.00
+
               </p>
 
-              <a href="./images/AmroSalah.png" class="banner-btn">Shop now</a>
+              <a href="#" class="banner-btn">Shop now</a>
 
             </div>
-
-          </div>
-
-          <div class="slider-item">
-
-            <img src="./images/smart-home-system-mobile-phone-screen.jpg" alt="modern sunglasses" class="banner-img" class="smart_testt">
-
-            <div class="banner-content">
+    </div>
+    <div class="carousel-item slider-item">
+      <img src="./images/person-holding-mobile-phone-with-high-tech-application-smart-house-features-controlling-lights-with-wireless-device.jpg" class="d-block w-100 banner-img" alt="...">
+      <div class="banner-content">
 
               <p class="banner-subtitle">Trending accessories</p>
 
@@ -533,35 +526,35 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
               <a href="#" class="banner-btn">Shop now</a>
 
             </div>
+    </div>
+    <div class="carousel-item active slider-item">
+      <img src="./images/smart-speaker-house-control-innovative-technology.jpg" class="d-block w-100 banner-img" alt="...">
+      <div class="banner-content">
 
-          </div>
+              <p class="banner-subtitle">Trending accessories</p>
 
-          <div class="slider-item">
-
-            <img src="./images/person-holding-mobile-phone-with-high-tech-application-smart-house-features-controlling-lights-with-wireless-device.jpg" alt="new fashion summer sale" class="banner-img">
-
-            <div class="banner-content">
-
-              <p class="banner-subtitle">Sale Offer</p>
-
-              <h2 class="banner-title">New fashion summer sale</h2>
+              <h2 class="banner-title">Modern sunglasses</h2>
 
               <p class="banner-text">
+
               starting at JOD <b>29</b>.99
+
               </p>
 
               <a href="#" class="banner-btn">Shop now</a>
 
             </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
     </div>
-
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
 
 
@@ -652,7 +645,7 @@ foreach ($categories as $category):
           -->
           <div class="product-main">
 
-            <h2 class="title">New Products</h2>
+            <h2 class="title">PRODUCT ON SALES</h2>
 
             <div class="product-grid">
 
@@ -661,14 +654,19 @@ foreach ($categories as $category):
 foreach ($products as $product):
 ?>
 
+
               <div class="showcase">
               
                 <div class="showcase-banner">
+                <a href="single.php?id=<?php echo $product['id'] ?>" >
+                
                   <img src="./AdminLTE_master/upload/<?php echo $product['product_img']; ?>" alt="Better Basics French Terry Sweatshorts"
                     class="product-img default" width="300">
                   <img src="./AdminLTE_master/upload/<?php echo $product['product_img']; ?>" alt="Better Basics French Terry Sweatshorts" class="product-img hover" width="300">
+
               
                   <p class="showcase-badge angle black" style="background-color:red !important;">sale</p>
+
               
                   <div class="showcase-actions">
                     <button class="btn-action">
@@ -716,6 +714,7 @@ foreach ($products as $product):
               </div>
 
               <?php endforeach ?>
+             
             </div>
 
 
@@ -924,15 +923,15 @@ foreach ($products as $product):
           </li>
         
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Product 1 </a>
+            <a href="#" class="footer-nav-link"> SHARP DISH WASHER </a>
           </li>
         
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Product 2 </a>
+            <a href="#" class="footer-nav-link"> LED DESK LIGHT TABLE LAMP </a>
           </li>
         
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Product 3 </a>
+            <a href="#" class="footer-nav-link"> EUFY SECURITY SOLOCAM E40 </a>
           </li>
         
         </ul>

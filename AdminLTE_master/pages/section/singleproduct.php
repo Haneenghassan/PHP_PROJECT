@@ -1,6 +1,6 @@
 <?php require_once('./connect.php');
 
-
+if($_SERVER["REQUEST_METHOD"] == "POST"){
 $id = $_GET['id'];
 
 
@@ -9,6 +9,8 @@ $stmt= $db->prepare($query) ;
 $stmt->bindValue(':id', $id);
 $stmt->execute();
 $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
 
 
 ?>
@@ -45,8 +47,8 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                     <?php
       foreach($products as $product) { ?>
                         <div class="images p-3">
-                            <div class="text-center p-4"> <img id="main-image" src="https://i.imgur.com/Dhebu4F.jpg" width="250" /> </div>
-                            <div class="thumbnail text-center"> <img onclick="change_image(this)" src="https://i.imgur.com/Rx7uKd0.jpg" width="70"> <img onclick="change_image(this)" src="https://i.imgur.com/Dhebu4F.jpg" width="70"> </div>
+                            <div class="text-center p-4"> <img id="main-image" src="./AdminLTE_master/upload/<?php echo $product['product_img']; ?>" width="250" /> </div>
+                            <div class="thumbnail text-center"> <img onclick="change_image(this)" src="./AdminLTE_master/upload/<?php echo $product['product_img']; ?>" width="70"> <img onclick="change_image(this)" src="./AdminLTE_master/upload/<?php echo $product['product_img']; ?>" width="70"> </div>
                         </div>
                     </div>
                     <div class="col-md-6">

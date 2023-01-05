@@ -5,7 +5,7 @@ require_once "../../config/connect.php";
 
 // 3 most selling products
 
-$query = "select product_id, sum(quantity) 
+$query = "select product_id,sum(quantity) 
 from order_detials 
 group by product_id 
 order by sum(quantity) desc 
@@ -68,7 +68,6 @@ $most_selling=$stmt->fetchAll(PDO::FETCH_ASSOC);
                         <!-- <th scope="row"><?PHP echo $user['id']?></th> -->
                         <td><?PHP echo $sell['product_id'] ?></td>
                         <td><?PHP echo $sell['sum(quantity)']?></td>
-
                     </tr>
                     <?php }?>
                 

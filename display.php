@@ -24,6 +24,17 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
 // print_r($products);
 // echo "</pre>";
 
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+  $cate = $_POST['category'];
+  if($cate == "All products"){
+    // all_product.php
+    header("location: http://localhost/PHP_PROJECT/all_product.php");
+  }else{
+    header("location: http://localhost/PHP_PROJECT/display.php?category=$cate");
+  }
+  // print_r($_POST);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +84,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
     - HEADER
   -->
 
-  <header>
+  <header >
 
 
 
@@ -102,7 +113,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
               <ul class="desktop-menu-category-list">
       
                 <li class="menu-category">
-                  <a href="#" class="menu-title">Home</a>
+                  <a href="http://localhost/PHP_PROJECT/" class="menu-title">Home</a>
                 </li>
 
 
@@ -139,24 +150,11 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                   <a href="./contactUs/conta.html" class="menu-title">Contact Us</a>
                 </li>
 
-                <?php
-                if(!isset($_SESSION['user_id'])){
-                  echo
-                '<li class="menu-category"> 
-                  <a href="AdminLTE_master/admindashboard/users/login.php" class="menu-title">Sign in</a>
-                </li>'; 
-                echo
-                '<li class="menu-category">
-                  <a href="AdminLTE_master/admindashboard/users/signup.php" class="menu-title">Registration</a>
-                </li>'; 
-              }else{
-                if(isset($_SESSION['user_id'])){
-                echo 
-                '<li class="menu-category">
-                  <a href="destroysession.php" class="menu-title">Logout</a>
-                </li>';
-              }}
-              ?>
+      
+                <li class="menu-category">
+                  <a href="./all_product.php" class="menu-title">Shop</a>
+                </li>
+      
 
               </ul>
       
@@ -483,7 +481,17 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-
+<form action="" method="post" style="margin-left: 70px; display:flex;">
+<select name="category" id="cars">
+<!-- <a href="./all_product.php" class="menu-title">All products</a> -->
+<!-- <a href="http://localhost/PHP_PROJECT/display.php?category=security"> Security</a> -->
+  <option value="All products">All products</option>
+  <option value="light"> Light</option>
+  <option value="Security">Security</option>
+  <option value="Kitchen">Kitchen</option>
+</select>
+<input type="submit" style="width: 60px" value="go">
+</form>
 
 
 
@@ -492,7 +500,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
           <!--
             - PRODUCT GRID
           -->
-          <div class="product-main mt-5">
+          <div class="product-main mt-5" style="width: 80%; margin: 0 auto">
 
             <h2 class="title"><?php echo $_GET['category'] ?></h2>
 

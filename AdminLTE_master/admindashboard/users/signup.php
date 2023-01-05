@@ -1,13 +1,15 @@
 <?php 
 require_once "../../config/connect.php";
 $erorrs = [];
-if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["user_name"]) && isset($_POST["user_email"]) && isset($_POST["address"])&& isset($_POST["password"]) && isset($_POST["confirm"])){
-    $user_name=$_POST['user_name'];
-    $user_email=$_POST['user_email'];
-    $address=$_POST['address'];
-    $phone=$_POST['phone'];
-    $password=$_POST['password'];
-    $confpassword=$_POST['confirm'];
+
+  if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["user_name"]) && isset($_POST["user_email"]) && isset($_POST["address"])&& isset($_POST["password"]) && isset($_POST["confirm"])){
+    
+      $user_name=$_POST['user_name'];
+      $user_email=$_POST['user_email'];
+      $address=$_POST['address'];
+      $phone=$_POST['phone'];
+      $password=$_POST['password'];
+      $confpassword=$_POST['confirm'];
 
         // check if name only contains letters and whitespace
         if (!preg_match("/^[a-zA-Z-' ]*$/",$user_name)) {
