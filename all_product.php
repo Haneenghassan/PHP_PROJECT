@@ -13,6 +13,17 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
 // print_r($products);
 // echo "</pre>";
 
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+  $cate = $_POST['category'];
+  if($cate == "All products"){
+    // all_product.php
+    header("location: http://localhost/PHP_PROJECT/all_product.php");
+  }else{
+    header("location: http://localhost/PHP_PROJECT/display.php?category=$cate");
+  }
+  // print_r($_POST);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -588,78 +599,19 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
 <!--
   - BANNER
 -->
+<form action="" method="post" style="margin-left: 70px; display:flex;">
+<select name="category" id="cars">
+<!-- <a href="./all_product.php" class="menu-title">All products</a> -->
+<!-- <a href="http://localhost/PHP_PROJECT/display.php?category=security"> Security</a> -->
+  <option value="All products">All products</option>
+  <option value="light"> Light</option>
+  <option value="Security">Security</option>
+  <option value="Kitchen">Kitchen</option>
+</select>
+<input type="submit" style="width: 60px" value="go">
+</form>
 
-<div class="banner">
 
-  <div class="container">
-
-    <div class="slider-container has-scrollbar">
-
-      <div class="slider-item">
-
-        <img src="./images/smart-speaker-house-control-innovative-technology.jpg" alt="women's latest fashion sale" class="banner-img">
-
-        <div class="banner-content">
-
-          <!-- <p class="banner-subtitle">Trending item</p> -->
-
-          <h2 class="banner-title">It's Time for smart living</h2>
-
-          <p class="banner-text">
-            starting at &dollar; <b>50</b>.00
-          </p>
-
-          <a href="./images/AmroSalah.png" class="banner-btn">Shop now</a>
-
-        </div>
-
-      </div>
-
-      <div class="slider-item">
-
-        <img src="./images/smart-home-system-mobile-phone-screen.jpg" alt="modern sunglasses" class="banner-img" class="smart_testt">
-
-        <div class="banner-content">
-
-          <p class="banner-subtitle">Trending accessories</p>
-
-          <h2 class="banner-title">Modern sunglasses</h2>
-
-          <p class="banner-text">
-            starting at &dollar; <b>15</b>.00
-          </p>
-
-          <a href="#" class="banner-btn">Shop now</a>
-
-        </div>
-
-      </div>
-
-      <div class="slider-item">
-
-        <img src="./images/person-holding-mobile-phone-with-high-tech-application-smart-house-features-controlling-lights-with-wireless-device.jpg" alt="new fashion summer sale" class="banner-img">
-
-        <div class="banner-content">
-
-          <p class="banner-subtitle">Sale Offer</p>
-
-          <h2 class="banner-title">New fashion summer sale</h2>
-
-          <p class="banner-text">
-            starting at &dollar; <b>29</b>.99
-          </p>
-
-          <a href="#" class="banner-btn">Shop now</a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
 
 <div class="product-container">
 

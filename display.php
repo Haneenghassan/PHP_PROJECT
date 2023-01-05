@@ -24,6 +24,17 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
 // print_r($products);
 // echo "</pre>";
 
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+  $cate = $_POST['category'];
+  if($cate == "All products"){
+    // all_product.php
+    header("location: http://localhost/PHP_PROJECT/all_product.php");
+  }else{
+    header("location: http://localhost/PHP_PROJECT/display.php?category=$cate");
+  }
+  // print_r($_POST);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -465,7 +476,17 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-
+<form action="" method="post" style="margin-left: 70px; display:flex;">
+<select name="category" id="cars">
+<!-- <a href="./all_product.php" class="menu-title">All products</a> -->
+<!-- <a href="http://localhost/PHP_PROJECT/display.php?category=security"> Security</a> -->
+  <option value="All products">All products</option>
+  <option value="light"> Light</option>
+  <option value="Security">Security</option>
+  <option value="Kitchen">Kitchen</option>
+</select>
+<input type="submit" style="width: 60px" value="go">
+</form>
 
 
 
