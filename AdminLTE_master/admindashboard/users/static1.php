@@ -3,6 +3,7 @@
 require_once "../../config/connect.php";
 
 // most product selling in many orders
+
 $query = "select product_id, count(quantity) 
 from order_detials 
 group by product_id 

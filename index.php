@@ -648,13 +648,17 @@ foreach ($categories as $category):
 foreach ($products as $product):
 ?>
 
+
               <div class="showcase">
               
                 <div class="showcase-banner">
+                <a href="single.php?id=<?php echo $product['id'] ?>" >
+                
                   <img src="./AdminLTE_master/upload/<?php echo $product['product_img']; ?>" alt="Better Basics French Terry Sweatshorts"
                     class="product-img default" width="300">
                   <img src="./AdminLTE_master/upload/<?php echo $product['product_img']; ?>" alt="Better Basics French Terry Sweatshorts" class="product-img hover" width="300">
-              
+                  </a>
+
                   <p class="showcase-badge angle black">sale</p>
               
                   <div class="showcase-actions">
@@ -703,6 +707,7 @@ foreach ($products as $product):
               </div>
 
               <?php endforeach ?>
+             
             </div>
 
 
@@ -911,15 +916,15 @@ foreach ($products as $product):
           </li>
         
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Product 1 </a>
+            <a href="#" class="footer-nav-link"> SHARP DISH WASHER </a>
           </li>
         
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Product 2 </a>
+            <a href="#" class="footer-nav-link"> LED DESK LIGHT TABLE LAMP </a>
           </li>
         
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Product 3 </a>
+            <a href="#" class="footer-nav-link"> EUFY SECURITY SOLOCAM E40 </a>
           </li>
         
         </ul>
