@@ -497,7 +497,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
       <img src="./images/smart-home-system-mobile-phone-screen.jpg" class="d-block w-100 banner-img" alt="...">
       <div class="banner-content">
 
-              <p class="banner-subtitle">Trending accessories</p>
+              <p class="banner-subtitle"></p>
 
               <h2 class="banner-title">Modern sunglasses</h2>
 
@@ -515,7 +515,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
       <img src="./images/person-holding-mobile-phone-with-high-tech-application-smart-house-features-controlling-lights-with-wireless-device.jpg" class="d-block w-100 banner-img" alt="...">
       <div class="banner-content">
 
-              <p class="banner-subtitle">Trending accessories</p>
+              <p class="banner-subtitle"></p>
 
               <h2 class="banner-title">Modern sunglasses</h2>
 
@@ -531,7 +531,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
       <img src="./images/smart-speaker-house-control-innovative-technology.jpg" class="d-block w-100 banner-img" alt="...">
       <div class="banner-content">
 
-              <p class="banner-subtitle">Trending accessories</p>
+              <p class="banner-subtitle"></p>
 
               <h2 class="banner-title">Modern sunglasses</h2>
 
