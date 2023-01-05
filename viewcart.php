@@ -197,7 +197,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                                      </div>
                                      <div class="cart_item_price cart_info_col">
                                          <div class="cart_item_title">Price</div>
-                                         <div class="cart_item_text">$<?php echo $product['price'] ?></div>
+                                         <div class="cart_item_text">JOD<?php echo $product['price'] ?></div>
                                      </div>
                                      <div class="cart_item_color cart_info_col">
                                          <div class="cart_item_title">discount</div>
@@ -205,7 +205,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                                      </div>
                                      <div class="cart_item_price cart_info_col">
                                          <div class="cart_item_title">Price after Discount</div>
-                                         <div class="cart_item_text">$<?php echo $product['price_after'] ?></div>
+                                         <div class="cart_item_text">JOD<?php echo $product['price_after'] ?></div>
                                      </div>
                                      <form action="" method="post" class="row">
                                      <div class="cart_item_quantity cart_info_col">
@@ -221,7 +221,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                                      
                                      <div class="cart_item_total cart_info_col">
                                          <div class="cart_item_title">Total</div>
-                                         <div class="cart_item_text">$<?php echo $_SESSION['cart'][$product['id']]['qty'] * $product['price_after'] ?></div>
+                                         <div class="cart_item_text">JOD<?php echo $_SESSION['cart'][$product['id']]['qty'] * $product['price_after'] ?></div>
                                      </div>
                                  </div>
                              </li>
@@ -237,7 +237,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                      <div class="order_total">
                          <div class="order_total_content text-md-right">
                              <div class="order_total_title">Order Total:</div>
-                             <div class="order_total_amount">$<?php echo $total ?? 0 ?></div>
+                             <div class="order_total_amount">JOD<?php echo $total ?? 0 ?></div>
                          </div>
                      </div>
                      <div class="cart_buttons row">

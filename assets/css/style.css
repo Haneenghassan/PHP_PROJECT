@@ -1282,7 +1282,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   padding: 5px 40px;
 }
 
-.product-grid .showcase-badge.black { background: var(--eerie-black); }
+.product-grid .showcase-badge.black { background: red !important; }
 
 .product-grid .showcase-badge.pink { background: var(--salmon-pink); }
 

@@ -16,6 +16,7 @@ catch(PDOException $e){
 }
 
 
+
 class crud {
 
     public static function connect(){
@@ -59,3 +60,4 @@ class crud {
 }
 
 ?>
+

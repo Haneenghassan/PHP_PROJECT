@@ -115,7 +115,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <li class="menu-category">
                   <a href="http://localhost/PHP_PROJECT/" class="menu-title">Home</a>
                 </li>
-      
+
+
                 <li class="menu-category">
                   <a href="#Cat" class="menu-title">Categories</a>
       
@@ -136,7 +137,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       
                 
       
-        
+                <li class="menu-category">
+                  <a href="./all_product.php" class="menu-title">All Product</a>
+                </li>
       
                 <li class="menu-category">
                   <a href="./aboutUs/abouttt.html" class="menu-title">About Us </a>
@@ -146,11 +149,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <li class="menu-category">
                   <a href="./contactUs/conta.html" class="menu-title">Contact Us</a>
                 </li>
+
       
                 <li class="menu-category">
                   <a href="./all_product.php" class="menu-title">Shop</a>
                 </li>
       
+
               </ul>
       
             </div>
@@ -422,7 +427,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
               <li class="submenu-category">
                 <a href="#" class="submenu-title">USD &dollar;</a>
               </li>
-
+              
               <li class="submenu-category">
                 <a href="#" class="submenu-title">EUR &euro;</a>
               </li>
@@ -513,7 +518,7 @@ foreach ($products as $product):
                     class="product-img default" width="300">
                   <img src="./AdminLTE_master/upload/<?php echo $product['product_img']; ?>" alt="Better Basics French Terry Sweatshorts" class="product-img hover" width="300">
               
-                  <p class="showcase-badge angle black">sale</p>
+                  <p class="showcase-badge angle black" style="background-color:red;">sale</p>
               
                   <div class="showcase-actions">
                     <button class="btn-action">
@@ -550,8 +555,8 @@ foreach ($products as $product):
                   </div>
               
                   <div class="price-box">
-                    <p class="price">$<?php echo $product['price_after']; ?></p>
-                    <del>$<?php echo $product['price']; ?></del>
+                    <p class="price">JOD<?php echo $product['price_after']; ?></p>
+                    <del>JOD<?php echo $product['price']; ?></del>
                     <!-- <a href="./aboutus.html" class="addToCart"><button> Add to Cart </button></a> -->
                   </div>
                   

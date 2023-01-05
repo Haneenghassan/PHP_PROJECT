@@ -654,7 +654,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
               <link itemprop="availability" href="http://schema.org/InStock">
               <div class="price-shipping">
                 <div class="price" id="price-preview" quickbeam="price" quickbeam-price="800">
-                  $800.00
+                  JOD 800.00
                 </div>
                 <a>On Delievry</a>
               </div>

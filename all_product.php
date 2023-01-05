@@ -285,7 +285,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <li class="menu-category">
                   <a href="./contactUs/conta.html" class="menu-title">Contact Us</a>
                 </li>
-      
+                <?php
+                if(!isset($_SESSION['user_id'])){
+                  echo
+                '<li class="menu-category"> 
+                  <a href="AdminLTE_master/admindashboard/users/login.php" class="menu-title">Sign in</a>
+                </li>'; 
+                echo
+                '<li class="menu-category">
+                  <a href="AdminLTE_master/admindashboard/users/signup.php" class="menu-title">Registration</a>
+                </li>'; 
+              }else{
+                if(isset($_SESSION['user_id'])){
+                echo 
+                '<li class="menu-category">
+                  <a href="destroysession.php" class="menu-title">Logout</a>
+                </li>';
+              }}
+              ?>
       
               </ul>
       
@@ -678,7 +695,7 @@ foreach ($products as $product):
                   </div>
               
                   <div class="price-box">
-                    <p class="price">$78.00</p>
+                    <p class="price">JOD 78.00</p>
                     
                     <!-- <a href="./aboutus.html" class="addToCart"><button> Add to Cart </button></a> -->
                   </div>

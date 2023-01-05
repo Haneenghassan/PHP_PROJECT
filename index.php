@@ -120,10 +120,6 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                   </div>
                 </li>
       
-                
-      
-        
-      
                 <li class="menu-category">
                   <a href="./aboutUs/abouttt.html" class="menu-title">About Us </a>
                 </li>
@@ -148,7 +144,29 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                 </li>
       <?php }} ?>
 
-                
+
+
+            
+      <?php
+                if(!isset($_SESSION['user_id'])){
+                  echo
+                '<li class="menu-category"> 
+                  <a href="AdminLTE_master/admindashboard/users/login.php" class="menu-title">Sign in</a>
+                </li>'; 
+                echo
+                '<li class="menu-category">
+                  <a href="AdminLTE_master/admindashboard/users/signup.php" class="menu-title">Registration</a>
+                </li>'; 
+              }else{
+                if(isset($_SESSION['user_id'])){
+                echo 
+                '<li class="menu-category">
+                  <a href="destroysession.php" class="menu-title">Logout</a>
+                </li>';
+              }}
+              ?>
+
+
               </ul>
       
             </div>
@@ -484,7 +502,9 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
               <h2 class="banner-title">Modern sunglasses</h2>
 
               <p class="banner-text">
-                starting at &dollar; <b>15</b>.00
+
+                starting at JOD <b>50</b>.00
+
               </p>
 
               <a href="#" class="banner-btn">Shop now</a>
@@ -500,7 +520,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
               <h2 class="banner-title">Modern sunglasses</h2>
 
               <p class="banner-text">
-                starting at &dollar; <b>15</b>.00
+              starting at JOD <b>15</b>.00
               </p>
 
               <a href="#" class="banner-btn">Shop now</a>
@@ -516,7 +536,9 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
               <h2 class="banner-title">Modern sunglasses</h2>
 
               <p class="banner-text">
-                starting at &dollar; <b>15</b>.00
+
+              starting at JOD <b>29</b>.99
+
               </p>
 
               <a href="#" class="banner-btn">Shop now</a>
@@ -641,9 +663,10 @@ foreach ($products as $product):
                   <img src="./AdminLTE_master/upload/<?php echo $product['product_img']; ?>" alt="Better Basics French Terry Sweatshorts"
                     class="product-img default" width="300">
                   <img src="./AdminLTE_master/upload/<?php echo $product['product_img']; ?>" alt="Better Basics French Terry Sweatshorts" class="product-img hover" width="300">
-                  </a>
 
-                  <p class="showcase-badge angle black">sale</p>
+              
+                  <p class="showcase-badge angle black" style="background-color:red !important;">sale</p>
+
               
                   <div class="showcase-actions">
                     <button class="btn-action">
@@ -680,8 +703,8 @@ foreach ($products as $product):
                   </div>
               
                   <div class="price-box">
-                    <p class="price">$<?php echo $product['price_after']; ?></p>
-                    <del>$<?php echo $product['price']; ?></del>
+                    <p class="price">JOD<?php echo $product['price_after']; ?></p>
+                    <del>JOD<?php echo $product['price']; ?></del>
                     <!-- <a href="./aboutus.html" class="addToCart"><button> Add to Cart </button></a> -->
                   </div>
                   
