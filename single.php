@@ -16,11 +16,11 @@ $stmt->execute();
 $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
-$query='SELECT * FROM categories WHERE id= :id';
-$stmt= $db->prepare($query) ;
-$stmt->bindValue(':id', $id);
-$stmt->execute();
-$categories=$stmt->fetchAll(PDO::FETCH_ASSOC);
+// $query='SELECT * FROM categories WHERE id= :id';
+// $stmt= $db->prepare($query) ;
+// $stmt->bindValue(':id', $id);
+// $stmt->execute();
+// $categories=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -458,6 +458,11 @@ $categories=$stmt->fetchAll(PDO::FETCH_ASSOC);
                         <div class="col-md-6">
                         <?php
       foreach($products as $product) { 
+        $query = "SELECT category_name, product_name, product_desc, price, discount, price_after, product_img FROM categories INNER JOIN products ON categories.id = category_id WHERE products.id =  ? ";
+       $stmt = $db->prepare($query);
+       $stmt->execute([$id]);
+       $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
+
         ?>
 
                             <div class="images p-3" >
@@ -468,12 +473,14 @@ $categories=$stmt->fetchAll(PDO::FETCH_ASSOC);
                         <div class="col-md-6">
                             <div class="product p-4">
                                 
-                               <?php foreach($categories as $category) {?>
-                                <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand"><?PHP echo $category['category_name']?></span>
-                              <?php }?>
+                              
+
+                                <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand"><?PHP echo  $products['0']['category_name'];?></span>
+                              
+                          
                                     <h5 class="text-uppercase"><?PHP echo $product['product_name']?></h5>
-                                    <div class="price d-flex flex-row align-items-center"> <span class="act-price"><?PHP echo $product['price_after'] ?></span>
-                                       <div class="ml-2" style="width: 50%;"> <small style="margin-left:3.5%;" class="dis-price"><?PHP echo $product['price'] ?></small><span  style="margin-left: 9.5%;"><?PHP echo $product['discount'] ?>% OFF</span> </div>
+                                    <div class="price d-flex flex-row align-items-center"> <span class="act-price"><?PHP echo $product['price_after']; ?></span>
+                                       <div class="ml-2" style="width: 50%;"> <small style="margin-left:3.5%;" class="dis-price"><?PHP echo $product['price'] ;?></small><span  style="margin-left: 9.5%;"><?PHP echo $product['discount']; ?>% OFF</span> </div>
                                     
                                      
                                       </div>
@@ -503,7 +510,10 @@ $query = "SELECT *
                FROM reviews 
                INNER JOIN users ON (reviews.user_id = users.id) WHERE product_id = ? ";
                 $stmt = $db->prepare($query);
-                $stmt->execute([$id]); ?>
+                $stmt->execute([$id]);
+                
+           
+                ?>
 
                   <section class="shadow-sm p-3 mb-5 bg-body-tertiary rounded" style="background-color:#eee;width:75%;margin-left:6%;border-radius: 5px;">
                   <h1 class ="text-center">Review For Products</h1>
