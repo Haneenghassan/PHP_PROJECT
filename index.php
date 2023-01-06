@@ -21,6 +21,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
 // print_r($products);
 // echo "</pre>";
 
+
 ?>
 
 <!DOCTYPE html>
@@ -74,7 +75,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-    <div class="header-main">
+    <div class="header-main" style ="padding:11px 0 ;">
 
 
       <div class="container">
@@ -99,34 +100,17 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
               <ul class="desktop-menu-category-list">
       
                 <li class="menu-category">
-                  <a href="#" class="menu-title">Home</a>
-                </li>
-      
-                <li class="menu-category">
-                  <a href="#Cat" class="menu-title">Categories</a>
-      
-                  <div class="dropdown-panel">
-                    <ul class="dropdown-panel-list">
-                      <li class="menu-title">
-                        <a href="http://localhost/PHP_PROJECT/display.php?category=light"> Light</a>
-                      </li>
-                      <li class="menu-title">
-                        <a href="http://localhost/PHP_PROJECT/display.php?category=security"> Security</a>
-                      </li>
-                      <li class="menu-title">
-                        <a href="http://localhost/PHP_PROJECT/display.php?category=kitchen"> Kitchen</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-      
-                <li class="menu-category">
-                  <a href="./aboutUs/abouttt.html" class="menu-title">About Us </a>
+                  <a href="http://localhost/PHP_PROJECT/index.php" class="menu-title">Home</a>
                 </li>
       
       
                 <li class="menu-category">
-                  <a href="./contactUs/conta.html" class="menu-title">Contact Us</a>
+                  <a href="http://localhost/PHP_PROJECT/abouttt.php" class="menu-title">About </a>
+                </li>
+      
+      
+                <li class="menu-category">
+                  <a href="http://localhost/PHP_PROJECT/contactUs/conta.php" class="menu-title">Contact</a>
                 </li>
                 <li class="menu-category">
                   <a href="./all_product.php" class="menu-title">Shop</a>

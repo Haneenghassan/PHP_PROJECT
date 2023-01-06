@@ -1,3 +1,11 @@
+<?php require('../AdminLTE_master/config/connect.php');
+
+session_start ();
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,6 +49,13 @@
   
   
   </head>
+  <style>
+    a {text-decoration:none ;
+     }
+    a:hover {
+      color:#2e5cd3
+    }
+  </style>
 
 
 
@@ -50,7 +65,7 @@
 
 
 
-    <div class="header-main">
+    <div class="header-main" style ="padding:11px 0 ;">
 
 
       <div class="container">
@@ -72,65 +87,61 @@
       
             <div class="container">
 
-              <ul class="desktop-menu-category-list">
+              <ul class="desktop-menu-category-list" >
       
                 <li class="menu-category">
-                  <a href="http://localhost/PHP_PROJECT/" class="menu-title">Home</a>
-                </li>
-      
-                <li class="menu-category">
-                  <a href="#Cat" class="menu-title">Categories</a>
-      
-                  <div class="dropdown-panel">
-      
-                    <ul class="dropdown-panel-list">
-      
-      
-                    </ul> 
-      
-                    <ul class="dropdown-panel-list">
-      
-                      <li class="menu-title">
-                        <a href="#">Light</a>
-                      </li>
-                      
-                    </ul>
-                    
-                    
-                    <ul class="dropdown-panel-list">
-      
-                      <li class="menu-title">
-                        <a href="#"> Kitchen</a>
-                      </li>
-      
-                      
-      
-                    </ul>
-      
-                    <ul class="dropdown-panel-list">
-      
-                      <li class="menu-title">
-                        <a href="#">Control System</a>
-                      </li>
-      
-                    
-      
-                    </ul>
-      
-                  </div>
+                  <a href="http://localhost/PHP_PROJECT/" class="menu-title" style="  font-weight: bold;">Home</a>
                 </li>
       
                
       
-        
+                
+      
+      
+      
       
                 <li class="menu-category">
-                  <a href="../aboutUs/abouttt.html" class="menu-title">About Us </a>
+                  <a href="http://localhost/PHP_PROJECT/abouttt.php" class="menu-title" style="  font-weight: bold;">About</a>
+                </li>
+      
+                <li class="menu-category">
+                  <a href="./all_product.php" class="menu-title" style="  font-weight: bold;">shop</a>
                 </li>
 
-                <li class="menu-category">
-                  <a href="../all_product.php" class="menu-title"> All Product </a>
-                </li>
+                <?php if(isset($_SESSION['user_id'])){ 
+      $query='SELECT * FROM users where id = :id';
+      $stmt= $db->prepare($query) ;
+      $stmt->bindValue(':id', $_SESSION['user_id']);
+      $stmt->execute();
+      $user=$stmt->fetch(PDO::FETCH_ASSOC);
+        if($user['is_admin'] == 1){
+      ?>
+            <li class="menu-category">
+              <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/users.php" class="menu-title" style="  font-weight: bold;">dashboard</a>
+            </li>
+  <?php }} ?>
+
+
+
+        
+  <?php
+            if(!isset($_SESSION['user_id'])){
+              echo
+            '<li class="menu-category" > 
+              <a href="AdminLTE_master/admindashboard/users/login.php" class="menu-title" style="  font-weight: bold;">Sign in</a>
+            </li>'; 
+            echo
+            '<li class="menu-category">
+              <a href="AdminLTE_master/admindashboard/users/signup.php" class="menu-title" style="  font-weight: bold;" >Registration</a>
+            </li>'; 
+          }else{
+            if(isset($_SESSION['user_id'])){
+            echo 
+            '<li class="menu-category">
+              <a href="destroysession.php" class="menu-title" style="  font-weight: bold;">Logout</a>
+            </li>';
+          }}
+          ?>
       
               </ul>
       
@@ -141,7 +152,32 @@
 
         </div>
 
-       
+        <div class="header-user-actions">
+<?php if(isset($_SESSION['user_id'])){ ?>
+  <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/profile.php?id=<?php echo $_SESSION['user_id'] ?>">
+    <button class="action-btn">
+      <ion-icon name="person-outline"></ion-icon>
+    </button>
+  </a>
+      <?php }else{ ?>
+        <button class="action-btn">
+          <ion-icon name="person-outline"></ion-icon>
+        </button>
+        <?php } ?>
+          </button>
+
+          <button class="action-btn">
+        
+        <?php if (isset ($_SESSION['cart'])) {?>
+      <a href="http://localhost/PHP_PROJECT/viewcart.php"><ion-icon name="bag-handle-outline"></ion-icon></a>
+      <span class="count"><?php echo count($_SESSION['cart']) ?></span>
+       <?php } else { ?>
+        <a href=""><ion-icon name="bag-handle-outline"></ion-icon></a>
+<span class="count">0</span>
+      <?php }  ?>
+      </button>
+
+        </div>
 
       </div>
 
@@ -626,7 +662,8 @@
     </footer>
 
 
-    <script src="./script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

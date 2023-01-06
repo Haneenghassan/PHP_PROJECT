@@ -463,6 +463,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
        $stmt->execute([$id]);
        $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
+      
         ?>
 
                             <div class="images p-3" >
@@ -485,7 +486,8 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                                      
                                       </div>
                                       <p class="about"><?PHP echo $product['product_desc'] ?></p>  
-                                      <div class="cart mt-4 align-items-center"> <button class="btn btn-primary text-uppercase mr-2 px-4">Add to cart</button> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>                               
+                                      <div class="cart mt-4 align-items-center">
+                                      <a href="addtocart.php?pro_id=<?php echo $product['id'] ?>&action=add"> <button class="btn btn-primary text-uppercase mr-2 px-4">Add to cart</button></a> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>                               
                                       </div>
                                 
                                 

@@ -1,3 +1,9 @@
+<?php require('./AdminLTE_master/config/connect.php');
+
+session_start ();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,13 +19,13 @@
     <title>About us</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="../assets/css/style-prefix.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style-prefix.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 
     <!--
     - favicon
   -->
-  <link rel="shortcut icon" href="../assets/images/logo/logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="./assets/images/logo/logo.png" type="image/x-icon">
 
 
   
@@ -80,6 +86,7 @@
     }
     .Details .icons:hover{
         opacity: 0.7;
+        
     }
 
     .Details h3{
@@ -100,6 +107,8 @@
         height: 400px;
         box-shadow: 3px 3px 20px black;
     }
+
+   
 </style>
 <body>
 
@@ -110,13 +119,13 @@
 
 
 
-        <div class="header-main">
+        <div class="header-main" style ="padding:11px 0 ;">
     
     
           <div class="container">
     
-            <a href="../index.php" class="header-logo">
-              <img src="../assets/images/logo/logo.png" alt="power home logo" width="55" height="55">
+            <a href="./index.php" class="header-logo">
+              <img src="./assets/images/logo/logo.png" alt="power home logo" width="55" height="55">
             </a>
     
     
@@ -138,48 +147,7 @@
                       <a href="http://localhost/PHP_PROJECT/" class="menu-title">Home</a>
                     </li>
           
-                    <li class="menu-category">
-                      <a href="#Cat" class="menu-title">Categories</a>
-          
-                      <div class="dropdown-panel">
-          
-                        <ul class="dropdown-panel-list">
-          
-                         
-                          
-          
-                        <ul class="dropdown-panel-list">
-          
-                          <li class="menu-title">
-                            <a href="#">Light</a>
-                          </li>
-                          
-        
-                        </ul>
-                        
-                        
-                        <ul class="dropdown-panel-list">
-          
-                          <li class="menu-title">
-                            <a href="#"> Kitchen</a>
-                          </li>
-          
-                        
-          
-                        </ul>
-          
-                        <ul class="dropdown-panel-list">
-          
-                          <li class="menu-title">
-                            <a href="#">Control System</a>
-                          </li>
-          
-                         
-          
-                        </ul>
-          
-                      </div>
-                    </li>
+                   
           
                     
           
@@ -187,12 +155,47 @@
           
           
                     <li class="menu-category">
-                      <a href="../contactUs/conta.html" class="menu-title">Contact Us</a>
+                      <a href="../contactUs/conta.html" class="menu-title">Contact</a>
                     </li>
           
                     <li class="menu-category">
-                      <a href="../all_product.php" class="menu-title">All Product</a>
+                      <a href="./all_product.php" class="menu-title">shop</a>
                     </li>
+
+                    <?php if(isset($_SESSION['user_id'])){ 
+          $query='SELECT * FROM users where id = :id';
+          $stmt= $db->prepare($query) ;
+          $stmt->bindValue(':id', $_SESSION['user_id']);
+          $stmt->execute();
+          $user=$stmt->fetch(PDO::FETCH_ASSOC);
+            if($user['is_admin'] == 1){
+          ?>
+                <li class="menu-category">
+                  <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/users.php" class="menu-title">dashboard</a>
+                </li>
+      <?php }} ?>
+
+
+
+            
+      <?php
+                if(!isset($_SESSION['user_id'])){
+                  echo
+                '<li class="menu-category"> 
+                  <a href="AdminLTE_master/admindashboard/users/login.php" class="menu-title">Sign in</a>
+                </li>'; 
+                echo
+                '<li class="menu-category">
+                  <a href="AdminLTE_master/admindashboard/users/signup.php" class="menu-title">Registration</a>
+                </li>'; 
+              }else{
+                if(isset($_SESSION['user_id'])){
+                echo 
+                '<li class="menu-category">
+                  <a href="destroysession.php" class="menu-title">Logout</a>
+                </li>';
+              }}
+              ?>
           
                   </ul>
           
@@ -204,17 +207,29 @@
             </div>
     
             <div class="header-user-actions">
-    
-              <button class="action-btn">
-                <ion-icon name="person-outline"></ion-icon>
+    <?php if(isset($_SESSION['user_id'])){ ?>
+      <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/profile.php?id=<?php echo $_SESSION['user_id'] ?>">
+        <button class="action-btn">
+          <ion-icon name="person-outline"></ion-icon>
+        </button>
+      </a>
+          <?php }else{ ?>
+            <button class="action-btn">
+              <ion-icon name="person-outline"></ion-icon>
+            </button>
+            <?php } ?>
               </button>
-    
-              
-    
+
               <button class="action-btn">
-                <ion-icon name="bag-handle-outline"></ion-icon>
-                <span class="count">0</span>
-              </button>
+            
+            <?php if (isset ($_SESSION['cart'])) {?>
+          <a href="http://localhost/PHP_PROJECT/viewcart.php"><ion-icon name="bag-handle-outline"></ion-icon></a>
+          <span class="count"><?php echo count($_SESSION['cart']) ?></span>
+           <?php } else { ?>
+            <a href=""><ion-icon name="bag-handle-outline"></ion-icon></a>
+<span class="count">0</span>
+          <?php }  ?>
+          </button>
     
             </div>
     
@@ -526,7 +541,7 @@ With over 20 years of combined experience, our electricians provide the highest 
             </p>
         </div>
         <div class="image">
-            <img src="../img/Smart-Homes-Cover-AR11072021.jpg">
+            <img src="./img/Smart-Homes-Cover-AR11072021.jpg">
         </div>
     </div>
 
@@ -721,6 +736,9 @@ With over 20 years of combined experience, our electricians provide the highest 
         </div>
     
       </footer>
+
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

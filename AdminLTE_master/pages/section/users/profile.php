@@ -11,7 +11,7 @@ require_once "../connect.php";
     if($image){
         $image = "../upload/$image";
     }else{
-        $image = "../../../dist/img/user4-128x128.jpg";
+        $image = "../../../dist/img/default.png";
     }
 ?>
 
