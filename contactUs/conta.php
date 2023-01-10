@@ -24,7 +24,7 @@ session_start ();
     <link rel="stylesheet" href="./style.css">
     
     <link rel="stylesheet" href="../assets/css/style-prefix.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    
 
      <!--
     - favicon
@@ -61,400 +61,215 @@ session_start ();
 
 <body>
 
-  <header>
+  
+<header>
 
 
 
-    <div class="header-main" style ="padding:11px 0 ;">
+<div class="header-main" style ="padding:11px 0 ;">
 
 
-      <div class="container">
+  <div class="container">
 
-        <a href="../index.php" class="header-logo">
-          <img src="../assets/images/logo/logo.png" alt="power home logo" width="55" height="55">
-        </a>
-
-
-
-
-
-        <div>
-
-          <nav class="desktop-navigation-menu">
+    <a href="./index.php" class="header-logo">
+      <img src="../assets/images/logo/logo.png" alt="power home logo" width="55" height="55">
+    </a>
 
 
 
-      
-            <div class="container">
 
-              <ul class="desktop-menu-category-list" >
-      
-                <li class="menu-category">
-                  <a href="http://localhost/PHP_PROJECT/" class="menu-title" style="  font-weight: bold;">Home</a>
-                </li>
-      
-               
-      
-                
-      
-      
-      
-      
-                <li class="menu-category">
-                  <a href="http://localhost/PHP_PROJECT/abouttt.php" class="menu-title" style="  font-weight: bold;">About</a>
-                </li>
-      
-                <li class="menu-category">
-                  <a href="./all_product.php" class="menu-title" style="  font-weight: bold;">shop</a>
-                </li>
 
-                <?php if(isset($_SESSION['user_id'])){ 
-      $query='SELECT * FROM users where id = :id';
-      $stmt= $db->prepare($query) ;
-      $stmt->bindValue(':id', $_SESSION['user_id']);
-      $stmt->execute();
-      $user=$stmt->fetch(PDO::FETCH_ASSOC);
-        if($user['is_admin'] == 1){
-      ?>
+    <div>
+
+      <nav class="desktop-navigation-menu">
+
+
+
+  
+        <div class="container">
+
+          <ul class="desktop-menu-category-list">
+  
             <li class="menu-category">
-              <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/users.php" class="menu-title" style="  font-weight: bold;">dashboard</a>
+              <a href="http://localhost/PHP_PROJECT/" class="menu-title">Home</a>
             </li>
-  <?php }} ?>
+  
+           
+  
+            
+  
+  
+  
+  
+            <li class="menu-category">
+              <a href="http://localhost/PHP_PROJECT/abouttt.php" class="menu-title">About</a>
+            </li>
+  
+            <li class="menu-category">
+              <a href="http://localhost/PHP_PROJECT/all_product.php" class="menu-title">shop</a>
+            </li>
 
-
-
-        
-  <?php
-            if(!isset($_SESSION['user_id'])){
-              echo
-            '<li class="menu-category" > 
-              <a href="AdminLTE_master/admindashboard/users/login.php" class="menu-title" style="  font-weight: bold;">Sign in</a>
-            </li>'; 
-            echo
-            '<li class="menu-category">
-              <a href="AdminLTE_master/admindashboard/users/signup.php" class="menu-title" style="  font-weight: bold;" >Registration</a>
-            </li>'; 
-          }else{
-            if(isset($_SESSION['user_id'])){
-            echo 
-            '<li class="menu-category">
-              <a href="destroysession.php" class="menu-title" style="  font-weight: bold;">Logout</a>
-            </li>';
-          }}
-          ?>
-      
-              </ul>
-      
-            </div>
-      
-          </nav>
-
-
-        </div>
-
-        <div class="header-user-actions">
-<?php if(isset($_SESSION['user_id'])){ ?>
-  <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/profile.php?id=<?php echo $_SESSION['user_id'] ?>">
-    <button class="action-btn">
-      <ion-icon name="person-outline"></ion-icon>
-    </button>
-  </a>
-      <?php }else{ ?>
-        <button class="action-btn">
-          <ion-icon name="person-outline"></ion-icon>
-        </button>
-        <?php } ?>
-          </button>
-
-          <button class="action-btn">
-        
-        <?php if (isset ($_SESSION['cart'])) {?>
-      <a href="http://localhost/PHP_PROJECT/viewcart.php"><ion-icon name="bag-handle-outline"></ion-icon></a>
-      <span class="count"><?php echo count($_SESSION['cart']) ?></span>
-       <?php } else { ?>
-        <a href=""><ion-icon name="bag-handle-outline"></ion-icon></a>
-<span class="count">0</span>
-      <?php }  ?>
-      </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-
-
+            <?php if(isset($_SESSION['user_id'])){ 
+  $query='SELECT * FROM users where id = :id';
+  $stmt= $db->prepare($query) ;
+  $stmt->bindValue(':id', $_SESSION['user_id']);
+  $stmt->execute();
+  $user=$stmt->fetch(PDO::FETCH_ASSOC);
+    if($user['is_admin'] == 1){
+  ?>
+        <li class="menu-category">
+          <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/users.php" class="menu-title">dashboard</a>
+        </li>
+<?php }} ?>
 
 
 
     
+<?php
+        if(!isset($_SESSION['user_id'])){
+          echo
+        '<li class="menu-category"> 
+          <a href="AdminLTE_master/admindashboard/users/login.php" class="menu-title">Sign in</a>
+        </li>'; 
+        echo
+        '<li class="menu-category">
+          <a href="AdminLTE_master/admindashboard/users/signup.php" class="menu-title">Registration</a>
+        </li>'; 
+      }else{
+        if(isset($_SESSION['user_id'])){
+        echo 
+        '<li class="menu-category">
+          <a href="destroysession.php" class="menu-title">Logout</a>
+        </li>';
+      }}
+      ?>
+  
+          </ul>
+  
+        </div>
+  
+      </nav>
 
-    <div class="mobile-bottom-navigation">
-
-      <button class="action-btn" data-mobile-menu-open-btn>
-        <ion-icon name="menu-outline"></ion-icon>
-      </button>
-
-      <button class="action-btn">
-        <ion-icon name="bag-handle-outline"></ion-icon>
-
-        <span class="count">0</span>
-      </button>
-
-      <button class="action-btn">
-        <ion-icon name="home-outline"></ion-icon>
-      </button>
-
-     
-
-      <button class="action-btn" data-mobile-menu-open-btn>
-        <ion-icon name="grid-outline"></ion-icon>
-      </button>
 
     </div>
 
-    <nav class="mobile-navigation-menu  has-scrollbar" data-mobile-menu>
+    <div class="header-user-actions">
+<?php if(isset($_SESSION['user_id'])){ ?>
+<a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/profile.php?id=<?php echo $_SESSION['user_id'] ?>">
+<button class="action-btn">
+  <ion-icon name="person-outline"></ion-icon>
+</button>
+</a>
+  <?php }else{ ?>
+    <button class="action-btn">
+      <ion-icon name="person-outline"></ion-icon>
+    </button>
+    <?php } ?>
+      </button>
 
-      <div class="menu-top">
-        <h2 class="menu-title">Menu</h2>
+      <button class="action-btn">
+    
+    <?php if (isset ($_SESSION['cart'])) {?>
+  <a href="http://localhost/PHP_PROJECT/viewcart.php"><ion-icon name="bag-handle-outline"></ion-icon></a>
+  <span class="count"><?php echo count($_SESSION['cart']) ?></span>
+   <?php } else { ?>
+    <a href=""><ion-icon name="bag-handle-outline"></ion-icon></a>
+<span class="count">0</span>
+  <?php }  ?>
+  </button>
 
-        <button class="menu-close-btn" data-mobile-menu-close-btn>
-          <ion-icon name="close-outline"></ion-icon>
-        </button>
-      </div>
+    </div>
 
-      <ul class="mobile-menu-category-list">
+  </div>
 
-        <li class="menu-category">
-          <a href="#" class="menu-title">Home</a>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="mobile-bottom-navigation">
+
+  <button class="action-btn" data-mobile-menu-open-btn>
+    <ion-icon name="menu-outline"></ion-icon>
+  </button>
+
+  <button class="action-btn">
+    <ion-icon name="bag-handle-outline"></ion-icon>
+
+    <span class="count">0</span>
+  </button>
+
+  <button class="action-btn">
+    <ion-icon name="home-outline"></ion-icon>
+  </button>
+
+ 
+
+  <button class="action-btn" data-mobile-menu-open-btn>
+    <ion-icon name="grid-outline"></ion-icon>
+  </button>
+
+</div>
+
+<nav class="mobile-navigation-menu  has-scrollbar" data-mobile-menu>
+
+  <div class="menu-top">
+    <h2 class="menu-title">Menu</h2>
+
+    <button class="menu-close-btn" data-mobile-menu-close-btn>
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+  </div>
+
+  <ul class="mobile-menu-category-list">
+
+    <li class="menu-category">
+      <a href="#" class="menu-title">Home</a>
+    </li>
+
+    <li class="menu-category">
+
+      <button class="accordion-menu" data-accordion-btn>
+        <p class="menu-title">Men's</p>
+
+        <div>
+          <ion-icon name="add-outline" class="add-icon"></ion-icon>
+          <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+        </div>
+      </button>
+
+      <ul class="submenu-category-list" data-accordion>
+
+        <li class="submenu-category">
+          <a href="#" class="submenu-title">Shirt</a>
         </li>
 
-        <li class="menu-category">
-
-          <button class="accordion-menu" data-accordion-btn>
-            <p class="menu-title">Men's</p>
-
-            <div>
-              <ion-icon name="add-outline" class="add-icon"></ion-icon>
-              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
-            </div>
-          </button>
-
-          <ul class="submenu-category-list" data-accordion>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Shirt</a>
-            </li>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Shorts & Jeans</a>
-            </li>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Safety Shoes</a>
-            </li>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Wallet</a>
-            </li>
-
-          </ul>
-
+        <li class="submenu-category">
+          <a href="#" class="submenu-title">Shorts & Jeans</a>
         </li>
 
-        <li class="menu-category">
-
-          <button class="accordion-menu" data-accordion-btn>
-            <p class="menu-title">Women's</p>
-
-            <div>
-              <ion-icon name="add-outline" class="add-icon"></ion-icon>
-              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
-            </div>
-          </button>
-
-          <ul class="submenu-category-list" data-accordion>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Dress & Frock</a>
-            </li>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Earrings</a>
-            </li>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Necklace</a>
-            </li>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Makeup Kit</a>
-            </li>
-
-          </ul>
-
+        <li class="submenu-category">
+          <a href="#" class="submenu-title">Safety Shoes</a>
         </li>
 
-        <li class="menu-category">
-
-          <button class="accordion-menu" data-accordion-btn>
-            <p class="menu-title">Jewelry</p>
-
-            <div>
-              <ion-icon name="add-outline" class="add-icon"></ion-icon>
-              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
-            </div>
-          </button>
-
-          <ul class="submenu-category-list" data-accordion>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Earrings</a>
-            </li>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Couple Rings</a>
-            </li>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Necklace</a>
-            </li>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Bracelets</a>
-            </li>
-
-          </ul>
-
-        </li>
-
-        <li class="menu-category">
-
-          <button class="accordion-menu" data-accordion-btn>
-            <p class="menu-title">Perfume</p>
-
-            <div>
-              <ion-icon name="add-outline" class="add-icon"></ion-icon>
-              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
-            </div>
-          </button>
-
-          <ul class="submenu-category-list" data-accordion>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Clothes Perfume</a>
-            </li>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Deodorant</a>
-            </li>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Flower Fragrance</a>
-            </li>
-
-            <li class="submenu-category">
-              <a href="#" class="submenu-title">Air Freshener</a>
-            </li>
-
-          </ul>
-
-        </li>
-
-        <li class="menu-category">
-          <a href="#" class="menu-title">Blog</a>
-        </li>
-
-        <li class="menu-category">
-          <a href="#" class="menu-title">Hot Offers</a>
+        <li class="submenu-category">
+          <a href="#" class="submenu-title">Wallet</a>
         </li>
 
       </ul>
 
-      <div class="menu-bottom">
+    </li>
 
-        <ul class="menu-category-list">
+    
 
-          <li class="menu-category">
+</nav>
 
-            <button class="accordion-menu" data-accordion-btn>
-              <p class="menu-title">Language</p>
-
-              <ion-icon name="caret-back-outline" class="caret-back"></ion-icon>
-            </button>
-
-            <ul class="submenu-category-list" data-accordion>
-
-              <li class="submenu-category">
-                <a href="#" class="submenu-title">English</a>
-              </li>
-
-              <li class="submenu-category">
-                <a href="#" class="submenu-title">Espa&ntilde;ol</a>
-              </li>
-
-              <li class="submenu-category">
-                <a href="#" class="submenu-title">Fren&ccedil;h</a>
-              </li>
-
-            </ul>
-
-          </li>
-
-          <li class="menu-category">
-            <button class="accordion-menu" data-accordion-btn>
-              <p class="menu-title">Currency</p>
-              <ion-icon name="caret-back-outline" class="caret-back"></ion-icon>
-            </button>
-
-            <ul class="submenu-category-list" data-accordion>
-              <li class="submenu-category">
-                <a href="#" class="submenu-title">USD &dollar;</a>
-              </li>
-
-              <li class="submenu-category">
-                <a href="#" class="submenu-title">EUR &euro;</a>
-              </li>
-            </ul>
-          </li>
-
-        </ul>
-
-        <ul class="menu-social-container">
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
-      </div>
-
-    </nav>
-
-  </header>
+</header>
 
 
 
@@ -501,165 +316,166 @@ session_start ();
     </section>
 
 
-    <footer>
-
-      <div class="footer-nav">
-  
-        <div class="container">
-  
-          <ul class="footer-nav-list">
-  
-            <li class="footer-nav-item">
-              <h2 class="nav-title">Popular Categories</h2>
-            </li>
-            
-            <li class="footer-nav-item">
-              <a href="#" class="footer-nav-link"> Light </a>
-            </li>
-  
-            <li class="footer-nav-item">
-              <a href="#" class="footer-nav-link"> Kitchen </a>
-            </li>
-  
-            <li class="footer-nav-item">
-              <a href="#" class="footer-nav-link"> Control  System</a>
-            </li>
-  
-          </ul>
-  
-          <ul class="footer-nav-list">
-          
-            <li class="footer-nav-item">
-              <h2 class="nav-title"> Best Seller Products</h2>
-            </li>
-          
-            <li class="footer-nav-item">
-              <a href="#" class="footer-nav-link">Product 1 </a>
-            </li>
-          
-            <li class="footer-nav-item">
-              <a href="#" class="footer-nav-link">Product 2 </a>
-            </li>
-          
-            <li class="footer-nav-item">
-              <a href="#" class="footer-nav-link">Product 3 </a>
-            </li>
-          
-          </ul>
-  
-          <ul class="footer-nav-list">
-          
-            <li class="footer-nav-item">
-              <h2 class="nav-title">Branches </h2>
-            </li>
-          
-            <li class="footer-nav-item">
-              <a href="#" class="footer-nav-link"> Aqaba - Jordan </a>
-            </li>
     
-            <li class="footer-nav-item">
-              <a href="#" class="footer-nav-link"> UK - Stanford </a>
-            </li>
-          
-            <li class="footer-nav-item">
-              <a href="#" class="footer-nav-link"> USA - New Hampshier </a>
-            </li>
-          
-          </ul>
-  
-         
-  
-          <ul class="footer-nav-list">
-  
-            <li class="footer-nav-item">
-              <h2 class="nav-title">Contact</h2>
-            </li>
-  
-            <li class="footer-nav-item flex">
-              <div class="icon-box">
-                <ion-icon name="location-outline"></ion-icon>
-              </div>
-  
-              <address class="content">
-                Unit 3, Century Court, Westcott Venture Park, Buckinghamshire, HP18 0XP
-              </address>
-            </li>
-  
-            <li class="footer-nav-item flex">
-              <div class="icon-box">
-                <ion-icon name="call-outline"></ion-icon>
-              </div>
-  
-              <a href="tel:+607936-8058" class="footer-nav-link">(607) 936-8058</a>
-            </li>
-  
-            <li class="footer-nav-item flex">
-              <div class="icon-box">
-                <ion-icon name="mail-outline"></ion-icon>
-              </div>
-  
-              <a href="mailto:example@gmail.com" class="footer-nav-link">Team4@gmail.com</a>
-            </li>
-  
-          </ul>
-  
-          <ul class="footer-nav-list">
-  
-            <li class="footer-nav-item">
-              <h2 class="nav-title">Follow Us</h2>
-            </li>
-  
-            <li>
-              <ul class="social-link">
-  
-                <li class="footer-nav-item">
-                  <a href="#" class="footer-nav-link">
-                    <ion-icon name="logo-facebook"></ion-icon>
-                  </a>
-                </li>
-  
-                <li class="footer-nav-item">
-                  <a href="#" class="footer-nav-link">
-                    <ion-icon name="logo-twitter"></ion-icon>
-                  </a>
-                </li>
-  
-                <li class="footer-nav-item">
-                  <a href="#" class="footer-nav-link">
-                    <ion-icon name="logo-linkedin"></ion-icon>
-                  </a>
-                </li>
-  
-                <li class="footer-nav-item">
-                  <a href="#" class="footer-nav-link">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                  </a>
-                </li>
-  
-              </ul>
-            </li>
-  
-          </ul>
-  
+  <footer>
+
+<div class="footer-nav">
+
+  <div class="container">
+
+    <ul class="footer-nav-list">
+
+      <li class="footer-nav-item">
+        <h2 class="nav-title">Popular Categories</h2>
+      </li>
+
+      <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link"> light </a>
+      </li>
+
+      <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link"> Kitchen </a>
+      </li>
+
+      <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link"> Control  System</a>
+      </li>
+
+    </ul>
+
+    <ul class="footer-nav-list">
+    
+      <li class="footer-nav-item">
+        <h2 class="nav-title"> Best Seller Products</h2>
+      </li>
+    
+      <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link"> SHARP DISH WASHER </a>
+      </li>
+    
+      <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link"> LED DESK LIGHT TABLE LAMP </a>
+      </li>
+    
+      <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link"> EUFY SECURITY SOLOCAM E40 </a>
+      </li>
+    
+    </ul>
+
+    <ul class="footer-nav-list">
+    
+      <li class="footer-nav-item">
+        <h2 class="nav-title">Branches </h2>
+      </li>
+    
+      <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link"> Aqaba - Jordan </a>
+      </li>
+
+      <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link"> UK - Stanford </a>
+      </li>
+    
+      <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link"> USA - New Hampshier </a>
+      </li>
+    
+    </ul>
+
+    
+
+    <ul class="footer-nav-list">
+
+      <li class="footer-nav-item">
+        <h2 class="nav-title">Contact</h2>
+      </li>
+
+      <li class="footer-nav-item flex">
+        <div class="icon-box">
+          <ion-icon name="location-outline"></ion-icon>
         </div>
-  
-      </div>
-  
-      <div class="footer-bottom">
-  
-        <div class="container">
-  
-          <img src="../assets/images/payment.png" alt="payment method" class="payment-img">
-  
-          <p class="copyright">
-            Copyright &copy; <a href="#"> Orange Coding Academy </a> all rights reserved.
-          </p>
-  
+
+        <address class="content">
+          jordan,aqaba
+        </address>
+      </li>
+
+      <li class="footer-nav-item flex">
+        <div class="icon-box">
+          <ion-icon name="call-outline"></ion-icon>
         </div>
-  
-      </div>
-  
-    </footer>
+
+        <a href="tel:+607936-8058" class="footer-nav-link">(607) 936-8058</a>
+      </li>
+
+      <li class="footer-nav-item flex">
+        <div class="icon-box">
+          <ion-icon name="mail-outline"></ion-icon>
+        </div>
+
+        <a href="mailto:example@gmail.com" class="footer-nav-link">Team4@gmail.com</a>
+      </li>
+
+    </ul>
+
+    <ul class="footer-nav-list">
+
+      <li class="footer-nav-item">
+        <h2 class="nav-title">Follow Us</h2>
+      </li>
+
+      <li>
+        <ul class="social-link">
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+      </li>
+
+    </ul>
+
+  </div>
+
+</div>
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <img src="../assets/images/payment.png" alt="payment method" class="payment-img">
+
+    
+  </div>
+  <p class="copyright">
+      Copyright &copy; <a href="#"> Orange Coding Academy </a> all rights reserved.
+    </p>
+
+</div>
+
+</footer>
 
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
