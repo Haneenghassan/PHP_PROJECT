@@ -631,112 +631,7 @@ foreach ($products as $product):
 
 
 
-    <!--
-      - BLOG
-    -->
-
-    <!-- <div class="blog">
-
-      <div class="container">
-
-        <div class="blog-container has-scrollbar">
-
-          <div class="blog-card">
-
-            <a href="#">
-              <img src="./assets/images/blog-1.jpg" alt="Clothes Retail KPIs 2021 Guide for Clothes Executives" width="300" class="blog-banner">
-            </a>
-
-            <div class="blog-content">
-
-              <a href="#" class="blog-category">Fashion</a>
-
-              <a href="#">
-                <h3 class="blog-title">Clothes Retail KPIs 2021 Guide for Clothes Executives.</h3>
-              </a>
-
-              <p class="blog-meta">
-                By <cite>Mr Admin</cite> / <time datetime="2022-04-06">Apr 06, 2022</time>
-              </p>
-
-            </div>
-
-          </div>
-
-          <div class="blog-card">
-          
-            <a href="#">
-              <img src="./assets/images/blog-2.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."
-                class="blog-banner" width="300">
-            </a>
-          
-            <div class="blog-content">
-          
-              <a href="#" class="blog-category">Clothes</a>
-          
-              <h3>
-                <a href="#" class="blog-title">Curbside fashion Trends: How to Win the Pickup Battle.</a>
-              </h3>
-          
-              <p class="blog-meta">
-                By <cite>Mr Robin</cite> / <time datetime="2022-01-18">Jan 18, 2022</time>
-              </p>
-          
-            </div>
-          
-          </div>
-
-          <div class="blog-card">
-          
-            <a href="#">
-              <img src="./assets/images/blog-3.jpg" alt="EBT vendors: Claim Your Share of SNAP Online Revenue."
-                class="blog-banner" width="300">
-            </a>
-          
-            <div class="blog-content">
-          
-              <a href="#" class="blog-category">Shoes</a>
-          
-              <h3>
-                <a href="#" class="blog-title">EBT vendors: Claim Your Share of SNAP Online Revenue.</a>
-              </h3>
-          
-              <p class="blog-meta">
-                By <cite>Mr Selsa</cite> / <time datetime="2022-02-10">Feb 10, 2022</time>
-              </p>
-          
-            </div>
-          
-          </div>
-
-          <div class="blog-card">
-          
-            <a href="#">
-              <img src="./assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."
-                class="blog-banner" width="300">
-            </a>
-          
-            <div class="blog-content">
-          
-              <a href="#" class="blog-category">Electronics</a>
-          
-              <h3>
-                <a href="#" class="blog-title">Curbside fashion Trends: How to Win the Pickup Battle.</a>
-              </h3>
-          
-              <p class="blog-meta">
-                By <cite>Mr Pawar</cite> / <time datetime="2022-03-15">Mar 15, 2022</time>
-              </p>
-          
-            </div>
-          
-          </div>
-
-        </div>
-
-      </div>
-
-    </div> -->
+    
 
   </main>
 
@@ -750,190 +645,163 @@ foreach ($products as $product):
 
   <footer>
 
-    <div class="footer-nav">
+<div class="footer-nav">
 
-      <div class="container">
+  <div class="container">
 
-        <ul class="footer-nav-list">
+    <ul class="footer-nav-list">
+
+      <li class="footer-nav-item">
+        <h2 class="nav-title">Popular Categories</h2>
+      </li>
+
+      <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link"> light </a>
+      </li>
+
+      <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link"> Kitchen </a>
+      </li>
+
+      <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link"> Control  System</a>
+      </li>
+
+    </ul>
+
+    <ul class="footer-nav-list">
+    
+      <li class="footer-nav-item">
+        <h2 class="nav-title"> Best Seller Products</h2>
+      </li>
+    
+      <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link"> SHARP DISH WASHER </a>
+      </li>
+    
+      <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link"> LED DESK LIGHT TABLE LAMP </a>
+      </li>
+    
+      <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link"> EUFY SECURITY SOLOCAM E40 </a>
+      </li>
+    
+    </ul>
+
+    <ul class="footer-nav-list">
+    
+      <li class="footer-nav-item">
+        <h2 class="nav-title">Branches </h2>
+      </li>
+    
+      <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link"> Aqaba - Jordan </a>
+      </li>
+
+      <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link"> UK - Stanford </a>
+      </li>
+    
+      <li class="footer-nav-item">
+        <a href="#" class="footer-nav-link"> USA - New Hampshier </a>
+      </li>
+    
+    </ul>
+
+    
+
+    <ul class="footer-nav-list">
+
+      <li class="footer-nav-item">
+        <h2 class="nav-title">Contact</h2>
+      </li>
+
+      <li class="footer-nav-item flex">
+        <div class="icon-box">
+          <ion-icon name="location-outline"></ion-icon>
+        </div>
+
+        <address class="content">
+          jordan,aqaba
+        </address>
+      </li>
+
+      <li class="footer-nav-item flex">
+        <div class="icon-box">
+          <ion-icon name="call-outline"></ion-icon>
+        </div>
+
+        <a href="tel:+607936-8058" class="footer-nav-link">(607) 936-8058</a>
+      </li>
+
+      <li class="footer-nav-item flex">
+        <div class="icon-box">
+          <ion-icon name="mail-outline"></ion-icon>
+        </div>
+
+        <a href="mailto:example@gmail.com" class="footer-nav-link">Team4@gmail.com</a>
+      </li>
+
+    </ul>
+
+    <ul class="footer-nav-list">
+
+      <li class="footer-nav-item">
+        <h2 class="nav-title">Follow Us</h2>
+      </li>
+
+      <li>
+        <ul class="social-link">
 
           <li class="footer-nav-item">
-            <h2 class="nav-title">Popular Categories</h2>
+            <a href="#" class="footer-nav-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
           </li>
 
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link"> light </a>
+            <a href="#" class="footer-nav-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
           </li>
 
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link"> Kitchen </a>
+            <a href="#" class="footer-nav-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
           </li>
 
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link"> Control  System</a>
+            <a href="#" class="footer-nav-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
           </li>
 
         </ul>
+      </li>
 
-        <ul class="footer-nav-list">
-        
-          <li class="footer-nav-item">
-            <h2 class="nav-title"> Best Seller Products</h2>
-          </li>
-        
-          <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Product 1 </a>
-          </li>
-        
-          <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Product 2 </a>
-          </li>
-        
-          <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Product 3 </a>
-          </li>
-        
-        </ul>
+    </ul>
 
-        <ul class="footer-nav-list">
-        
-          <li class="footer-nav-item">
-            <h2 class="nav-title">Branches </h2>
-          </li>
-        
-          <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link"> Aqaba - Jordan </a>
-          </li>
-  
-          <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link"> UK - Stanford </a>
-          </li>
-        
-          <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link"> USA - New Hampshier </a>
-          </li>
-        
-        </ul>
+  </div>
 
-        <!-- <ul class="footer-nav-list">
-        
-          <li class="footer-nav-item">
-            <h2 class="nav-title">Services</h2>
-          </li>
-        
-          <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Prices drop</a>
-          </li>
-        
-          <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">New products</a>
-          </li>
-        
-          <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Best sales</a>
-          </li>
-        
-          <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Contact us</a>
-          </li>
-        
-          <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Sitemap</a>
-          </li>
-        
-        </ul> -->
+</div>
 
-        <ul class="footer-nav-list">
+<div class="footer-bottom">
 
-          <li class="footer-nav-item">
-            <h2 class="nav-title">Contact</h2>
-          </li>
+  <div class="container">
 
-          <li class="footer-nav-item flex">
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
+    <img src="./assets/images/payment.png" alt="payment method" class="payment-img">
 
-            <address class="content">
-              419 State 414 Rte
-              Beaver Dams, New York(NY), 14812, USA
-            </address>
-          </li>
+    
+  </div>
+  <p class="copyright">
+      Copyright &copy; <a href="#"> Orange Coding Academy </a> all rights reserved.
+    </p>
 
-          <li class="footer-nav-item flex">
-            <div class="icon-box">
-              <ion-icon name="call-outline"></ion-icon>
-            </div>
+</div>
 
-            <a href="tel:+607936-8058" class="footer-nav-link">(607) 936-8058</a>
-          </li>
-
-          <li class="footer-nav-item flex">
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <a href="mailto:example@gmail.com" class="footer-nav-link">Team4@gmail.com</a>
-          </li>
-
-        </ul>
-
-        <ul class="footer-nav-list">
-
-          <li class="footer-nav-item">
-            <h2 class="nav-title">Follow Us</h2>
-          </li>
-
-          <li>
-            <ul class="social-link">
-
-              <li class="footer-nav-item">
-                <a href="#" class="footer-nav-link">
-                  <ion-icon name="logo-facebook"></ion-icon>
-                </a>
-              </li>
-
-              <li class="footer-nav-item">
-                <a href="#" class="footer-nav-link">
-                  <ion-icon name="logo-twitter"></ion-icon>
-                </a>
-              </li>
-
-              <li class="footer-nav-item">
-                <a href="#" class="footer-nav-link">
-                  <ion-icon name="logo-linkedin"></ion-icon>
-                </a>
-              </li>
-
-              <li class="footer-nav-item">
-                <a href="#" class="footer-nav-link">
-                  <ion-icon name="logo-instagram"></ion-icon>
-                </a>
-              </li>
-
-            </ul>
-          </li>
-
-        </ul>
-
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-
-      <div class="container">
-
-        <img src="./assets/images/payment.png" alt="payment method" class="payment-img">
-
-        <p class="copyright">
-          Copyright &copy; <a href="#"> Orange Coding Academy </a> all rights reserved.
-        </p>
-
-      </div>
-
-    </div>
-
-  </footer>
+</footer>
 
 
   <!--
