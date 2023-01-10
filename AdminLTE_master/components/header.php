@@ -38,9 +38,6 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="http://localhost/PHP_PROJECT/index.php" class="nav-link">Home</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
     </ul>
 
     <!-- Right navbar links -->
@@ -123,7 +120,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                section
+                Pages
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -154,7 +151,7 @@
             <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/static.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Most Product Selling
+               Populer Products
                 <!-- <span class="right badge badge-danger">New</span> -->
               </p>
             </a>
@@ -163,7 +160,7 @@
             <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/static1.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Most Product in Many Order
+                Populer Orders
                 <!-- <span class="right badge badge-danger">New</span> -->
               </p>
             </a>
@@ -172,7 +169,7 @@
             <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/static2.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Loyal Client
+                Populer Custemors
                 <!-- <span class="right badge badge-danger">New</span> -->
               </p>
             </a>

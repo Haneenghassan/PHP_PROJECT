@@ -87,38 +87,22 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
           <ul class="desktop-menu-category-list">
   
             <li class="menu-category">
-              <a href="#" class="menu-title">Home</a>
+              <a href="http://localhost/PHP_PROJECT/index.php" class="menu-title">Home</a>
             </li>
   
-            <li class="menu-category">
-              <a href="#Cat" class="menu-title">Categories</a>
-  
-              <div class="dropdown-panel">
-                <ul class="dropdown-panel-list">
-                  <li class="menu-title">
-                    <a href="http://localhost/PHP_PROJECT/display.php?category=light"> Light</a>
-                  </li>
-                  <li class="menu-title">
-                    <a href="http://localhost/PHP_PROJECT/display.php?category=security"> Security</a>
-                  </li>
-                  <li class="menu-title">
-                    <a href="http://localhost/PHP_PROJECT/display.php?category=kitchen"> Kitchen</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
+            
   
             
   
     
   
             <li class="menu-category">
-              <a href="./aboutUs/abouttt.html" class="menu-title">About Us </a>
+              <a href="http://localhost/PHP_PROJECT/abouttt.php" class="menu-title">About </a>
             </li>
   
   
             <li class="menu-category">
-              <a href="./contactUs/conta.html" class="menu-title">Contact Us</a>
+              <a href="http://localhost/PHP_PROJECT/contactUs/conta.php" class="menu-title">Contact</a>
             </li>
             <li class="menu-category">
               <a href="./all_product.php" class="menu-title">Shop</a>
@@ -136,6 +120,26 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
             </li>
   <?php }} ?>
 
+
+
+  <?php
+                if(!isset($_SESSION['user_id'])){
+                  echo
+                '<li class="menu-category"> 
+                  <a href="AdminLTE_master/admindashboard/users/login.php" class="menu-title">Sign in</a>
+                </li>'; 
+                echo
+                '<li class="menu-category">
+                  <a href="AdminLTE_master/admindashboard/users/signup.php" class="menu-title">Registration</a>
+                </li>'; 
+              }else{
+                if(isset($_SESSION['user_id'])){
+                echo 
+                '<li class="menu-category">
+                  <a href="destroysession.php" class="menu-title">Logout</a>
+                </li>';
+              }}
+              ?>
             
           </ul>
   
@@ -480,8 +484,8 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                               
                           
                                     <h5 class="text-uppercase"><?PHP echo $product['product_name']?></h5>
-                                    <div class="price d-flex flex-row align-items-center"> <span class="act-price"><?PHP echo $product['price_after']; ?></span>
-                                       <div class="ml-2" style="width: 50%;"> <small style="margin-left:3.5%;" class="dis-price"><?PHP echo $product['price'] ;?></small><span  style="margin-left: 9.5%;"><?PHP echo $product['discount']; ?>% OFF</span> </div>
+                                    <div class="price d-flex flex-row align-items-center"> <span class="act-price"><?PHP echo $product['price_after'] .'JD'; ?></span>
+                                       <div class="ml-2" style="width: 50%;"> <small style="margin-left:3.5%;" class="dis-price"><?PHP echo $product['price'] .'JD' ;?></small><span  style="margin-left: 9.5%;"><?PHP echo $product['discount']; ?>% OFF</span> </div>
                                     
                                      
                                       </div>
@@ -595,7 +599,7 @@ $query = "SELECT *
             if (isset($_SESSION['user_id'])) {
                $comment_text = $_POST['comment_text'];
                $sqlInserComment = "INSERT INTO reviews (user_id,product_id,comment,review_date) 
-                                 VALUES ('$user_id','$id','$comment_text ',NOW())";
+                                 VALUES ('$user_id','$id','$comment_text ', NOW())";
                $stmt = $db->query($sqlInserComment);
                $return_to_page =  $_SERVER['PHP_SELF'];
                
