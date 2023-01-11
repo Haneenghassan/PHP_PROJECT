@@ -96,14 +96,18 @@ session_start ();
   
            
   
-            
-  
-  
-  
-  
             <li class="menu-category">
               <a href="http://localhost/PHP_PROJECT/abouttt.php" class="menu-title">About</a>
             </li>
+            
+  
+            <li class="menu-category">
+                      <a href="http://localhost/PHP_PROJECT/contactUs/conta.php" class="menu-title">Contact</a>
+                    </li>
+  
+  
+
+            
   
             <li class="menu-category">
               <a href="http://localhost/PHP_PROJECT/all_product.php" class="menu-title">shop</a>

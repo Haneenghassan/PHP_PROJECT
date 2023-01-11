@@ -534,7 +534,6 @@ $query = "SELECT *
 
             <?php while ($comment = $stmt->fetch()) {
             $comment_id = $comment['id'];
-            $user_id = $comment['user_id'];
             $product_id = $comment['product_id'];
             $comment_date = $comment['review_date'];
             $comment_content = $comment['comment'];
@@ -579,6 +578,7 @@ $query = "SELECT *
 
 
   <?php
+
          if(isset($_SESSION['user_id'])){ ?>
             <form action="" method="post"  >
             <div class="card-body p-4 " >
@@ -595,7 +595,7 @@ $query = "SELECT *
          <?php } ?> 
 
          <?php 
-         if (isset($_POST['submit_comment'])) {
+         if (isset($_POST['comment_text'])) {
             if (isset($_SESSION['user_id'])) {
                $comment_text = $_POST['comment_text'];
                $sqlInserComment = "INSERT INTO reviews (user_id,product_id,comment,review_date) 
