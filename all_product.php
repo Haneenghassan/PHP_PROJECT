@@ -651,9 +651,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 foreach ($products as $product):
 ?>
 
+
               <div class="showcase">
               
                 <div class="showcase-banner">
+                <a href="single.php?id=<?php echo $product['id'] ?>" >
                   <img src="./AdminLTE_master/upload/<?php echo $product['product_img']; ?>" alt="Better Basics French Terry Sweatshorts"
                     class="product-img default" width="300">
                   <img src="./AdminLTE_master/upload/<?php echo $product['product_img']; ?>" alt="Better Basics French Terry Sweatshorts" class="product-img hover" width="300">
