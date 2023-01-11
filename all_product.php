@@ -78,7 +78,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 
-    <div class="header-main">
+    <div class="header-main" style ="padding:11px 0 ;">
 
 
       <div class="container">
@@ -103,189 +103,38 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
               <ul class="desktop-menu-category-list">
       
                 <li class="menu-category">
-                  <a href="#" class="menu-title">Home</a>
-                </li>
-      
-                <li class="menu-category">
-                  <a href="#Cat" class="menu-title">Categories</a>
-      
-                  <div class="dropdown-panel">
-      
-                    <ul class="dropdown-panel-list">
-      
-                      <!-- <li class="menu-title">
-                        <a href="#">Electronics</a>
-                      </li>
-      
-                      <li class="panel-list-item">
-                        <a href="#">Desktop</a>
-                      </li>
-      
-                      <li class="panel-list-item">
-                        <a href="#">Laptop</a>
-                      </li>
-      
-                      <li class="panel-list-item">
-                        <a href="#">Camera</a>
-                      </li>
-      
-                      <li class="panel-list-item">
-                        <a href="#">Tablet</a>
-                      </li>
-      
-                      <li class="panel-list-item">
-                        <a href="#">Headphone</a>
-                      </li>
-      
-                      <li class="panel-list-item">
-                        <a href="#">
-                          <img src="./assets/images/electronics-banner-1.jpg" alt="headphone collection" width="250"
-                            height="119">
-                        </a>
-                      </li>
-      
-                    </ul> -->
-      
-                    <ul class="dropdown-panel-list">
-      
-                      <li class="menu-title">
-                        <a href="#">Cat 1</a>
-                      </li>
-      <!-- 
-                      <li class="panel-list-item">
-                        <a href="#">Formal</a>
-                      </li>
-      
-                      <li class="panel-list-item">
-                        <a href="#">Casual</a>
-                      </li>
-      
-                      <li class="panel-list-item">
-                        <a href="#">Sports</a>
-                      </li>
-      
-                      <li class="panel-list-item">
-                        <a href="#">Jacket</a>
-                      </li>
-      
-                      <li class="panel-list-item">
-                        <a href="#">Sunglasses</a>
-                      </li>
-      
-                      <li class="panel-list-item">
-                        <a href="#">
-                          <img src="./assets/images/mens-banner.jpg" alt="men's fashion" width="250" height="119">
-                        </a>
-                      </li> -->
-      
-                    </ul>
-      
-                    <ul class="dropdown-panel-list">
-      
-                      <li class="menu-title">
-                        <a href="#"> Cat 2</a>
-                      </li>
-      
-                      <!-- <li class="panel-list-item">
-                        <a href="#">Formal</a>
-                      </li>
-      
-                      <li class="panel-list-item">
-                        <a href="#">Casual</a>
-                      </li>
-      
-                      <li class="panel-list-item">
-                        <a href="#">Perfume</a>
-                      </li>
-      
-                      <li class="panel-list-item">
-                        <a href="#">Cosmetics</a>
-                      </li>
-      
-                      <li class="panel-list-item">
-                        <a href="#">Bags</a>
-                      </li>
-      
-                      <li class="panel-list-item">
-                        <a href="#">
-                          <img src="./assets/images/womens-banner.jpg" alt="women's fashion" width="250" height="119">
-                        </a>
-                      </li> -->
-      
-                    </ul>
-      
-                    <ul class="dropdown-panel-list">
-      
-                      <li class="menu-title">
-                        <a href="#">Cat 3</a>
-                      </li>
-      
-                      <!-- <li class="panel-list-item">
-                        <a href="#">Smart Watch</a>
-                      </li>
-      
-                      <li class="panel-list-item">
-                        <a href="#">Smart TV</a>
-                      </li>
-      
-                      <li class="panel-list-item">
-                        <a href="#">Keyboard</a>
-                      </li>
-      
-                      <li class="panel-list-item">
-                        <a href="#">Mouse</a>
-                      </li>
-      
-                      <li class="panel-list-item">
-                        <a href="#">Microphone</a>
-                      </li>
-      
-                      <li class="panel-list-item">
-                        <a href="#">
-                          <img src="./assets/images/electronics-banner-2.jpg" alt="mouse collection" width="250" height="119">
-                        </a>
-                      </li> -->
-      
-                    </ul>
-      
-                  </div>
-                </li>
-      
-                <!-- <li class="menu-category">
-                  <a href="#" class="menu-title">kitchen</a>
-      
-                  <ul class="dropdown-list">
-      
-                    <li class="dropdown-item">
-                      <a href="#">Shirt</a>
-                    </li>
-      
-                    <li class="dropdown-item">
-                      <a href="#">Shorts & Jeans</a>
-                    </li>
-      
-                    <li class="dropdown-item">
-                      <a href="#">Safety Shoes</a>
-                    </li>
-      
-                    <li class="dropdown-item">
-                      <a href="#">Wallet</a>
-                    </li>
-      
-                  </ul>
-                </li> -->
-      
-        
-      
-                <li class="menu-category">
-                  <a href="./aboutUs/abouttt.html" class="menu-title">About Us </a>
+                  <a href="http://localhost/PHP_PROJECT/index.php" class="menu-title">Home</a>
                 </li>
       
       
                 <li class="menu-category">
-                  <a href="./contactUs/conta.html" class="menu-title">Contact Us</a>
+                  <a href="http://localhost/PHP_PROJECT/abouttt.php" class="menu-title">About </a>
                 </li>
-                <?php
+      
+      
+                <li class="menu-category">
+                  <a href="http://localhost/PHP_PROJECT/contactUs/conta.php" class="menu-title">Contact</a>
+                </li>
+                <li class="menu-category">
+                  <a href="./all_product.php" class="menu-title">Shop</a>
+                </li>
+        <?php if(isset($_SESSION['user_id'])){ 
+          $query='SELECT * FROM users where id = :id';
+          $stmt= $db->prepare($query) ;
+          $stmt->bindValue(':id', $_SESSION['user_id']);
+          $stmt->execute();
+          $user=$stmt->fetch(PDO::FETCH_ASSOC);
+            if($user['is_admin'] == 1){
+          ?>
+                <li class="menu-category">
+                  <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/users.php" class="menu-title">dashboard</a>
+                </li>
+      <?php }} ?>
+
+
+
+            
+      <?php
                 if(!isset($_SESSION['user_id'])){
                   echo
                 '<li class="menu-category"> 
@@ -303,7 +152,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 </li>';
               }}
               ?>
-      
+
+
               </ul>
       
             </div>
@@ -314,10 +164,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </div>
 
         <div class="header-user-actions">
-
-          <button class="action-btn">
-            <ion-icon name="person-outline"></ion-icon>
-          </button>
+    <?php if(isset($_SESSION['user_id'])){ ?>
+      <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/profile.php?id=<?php echo $_SESSION['user_id'] ?>">
+        <button class="action-btn">
+          <ion-icon name="person-outline"></ion-icon>
+        </button>
+      </a>
+          <?php }else{ ?>
+            <button class="action-btn">
+              <ion-icon name="person-outline"></ion-icon>
+            </button>
+            <?php } ?>
 
           
 
@@ -717,8 +574,7 @@ foreach ($products as $product):
 </div>
 </div>
 
-                          
-  <footer>
+<footer>
 
 <div class="footer-nav">
 
@@ -751,15 +607,15 @@ foreach ($products as $product):
       </li>
     
       <li class="footer-nav-item">
-        <a href="#" class="footer-nav-link">Product 1 </a>
+        <a href="#" class="footer-nav-link"> SHARP DISH WASHER </a>
       </li>
     
       <li class="footer-nav-item">
-        <a href="#" class="footer-nav-link">Product 2 </a>
+        <a href="#" class="footer-nav-link"> LED DESK LIGHT TABLE LAMP </a>
       </li>
     
       <li class="footer-nav-item">
-        <a href="#" class="footer-nav-link">Product 3 </a>
+        <a href="#" class="footer-nav-link"> EUFY SECURITY SOLOCAM E40 </a>
       </li>
     
     </ul>
@@ -784,33 +640,7 @@ foreach ($products as $product):
     
     </ul>
 
-    <!-- <ul class="footer-nav-list">
     
-      <li class="footer-nav-item">
-        <h2 class="nav-title">Services</h2>
-      </li>
-    
-      <li class="footer-nav-item">
-        <a href="#" class="footer-nav-link">Prices drop</a>
-      </li>
-    
-      <li class="footer-nav-item">
-        <a href="#" class="footer-nav-link">New products</a>
-      </li>
-    
-      <li class="footer-nav-item">
-        <a href="#" class="footer-nav-link">Best sales</a>
-      </li>
-    
-      <li class="footer-nav-item">
-        <a href="#" class="footer-nav-link">Contact us</a>
-      </li>
-    
-      <li class="footer-nav-item">
-        <a href="#" class="footer-nav-link">Sitemap</a>
-      </li>
-    
-    </ul> -->
 
     <ul class="footer-nav-list">
 
@@ -824,8 +654,7 @@ foreach ($products as $product):
         </div>
 
         <address class="content">
-          419 State 414 Rte
-          Beaver Dams, New York(NY), 14812, USA
+          jordan,aqaba
         </address>
       </li>
 
@@ -895,16 +724,15 @@ foreach ($products as $product):
 
     <img src="./assets/images/payment.png" alt="payment method" class="payment-img">
 
-    <p class="copyright">
+    
+  </div>
+  <p class="copyright">
       Copyright &copy; <a href="#"> Orange Coding Academy </a> all rights reserved.
     </p>
-
-  </div>
 
 </div>
 
 </footer>
-
 
 <!--
 - custom js link
