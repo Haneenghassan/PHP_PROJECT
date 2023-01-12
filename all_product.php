@@ -554,8 +554,8 @@ foreach ($products as $product):
                   </div>
               
                   <div class="price-box">
-                    <p class="price">JOD 78.00</p>
-                    
+                    <p class="price">JOD<?php echo $product['price_after']; ?></p>
+                    <del>JOD<?php echo $product['price']; ?></del>
                     <!-- <a href="./aboutus.html" class="addToCart"><button> Add to Cart </button></a> -->
                   </div>
                   
