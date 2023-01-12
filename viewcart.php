@@ -99,7 +99,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <div class="header-main">
       <div class="container">
-        <a href="#" class="header-logo">
+        <a href="http://localhost/PHP_PROJECT/index.php" class="header-logo">
           <img src="./assets/images/logo/logo.png" alt="power home logo" width="55" height="55">
         </a>
         <div>
@@ -111,23 +111,6 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                   <a href="http://localhost/PHP_PROJECT/index.php" class="menu-title">Home</a>
                 </li>
       
-                <li class="menu-category">
-                  <a href="#Cat" class="menu-title">Categories</a>
-      
-                  <div class="dropdown-panel">
-                    <ul class="dropdown-panel-list">
-                      <li class="menu-title">
-                        <a href="http://localhost/PHP_PROJECT/display.php?category=light"> Light</a>
-                      </li>
-                      <li class="menu-title">
-                        <a href="http://localhost/PHP_PROJECT/display.php?category=security"> Security</a>
-                      </li>
-                      <li class="menu-title">
-                        <a href="http://localhost/PHP_PROJECT/display.php?category=kitchen"> Kitchen</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
                 <li class="menu-category">
                   <a href="./aboutUs/abouttt.html" class="menu-title">About Us </a>
                 </li>

@@ -45,25 +45,35 @@ $most_selling=$stmt->fetchAll(PDO::FETCH_ASSOC);
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0"> 
-              <table class="table table-sm">
+              <table class="table table-sm ">
                 <thead>
                   <tr>
                   <!-- <th scope="col">ID</th> -->
-                    <th scope="col"> User ID</th>
+                    <th scope="col"> User Image</th>
+                    <th scope="col"> User Name</th>
+                    <th scope="col"> Address</th>
+                    <th scope="col"> Phone Number</th>
                     <th scope="col">Total</th>
                   </tr>
                 </thead>
                 <tbody>
                     <?php
                     foreach($most_selling as $sell){
-                        
+                      $id = $sell['user_id'];
+                      $query='SELECT * FROM users WHERE id = :id';
+                      $stmt=$db->prepare($query);
+                      $stmt->bindValue(':id', $id);
+                      $stmt->execute();
+                      $user=$stmt->fetch(PDO::FETCH_ASSOC);
                     ?>
 
                     <tr>
                     
-                        <!-- <th scope="row"><?PHP echo $user['id']?></th> -->
-                        <td><?PHP echo $sell['user_id'] ?></td>
-                        <td><?PHP echo $sell['Total']?></td>
+                        <td><img width="50" style="border-radius: 50%;" src="../../upload/<?PHP echo  $user['image_url'] ?>" alt=""></td>
+                        <td style="line-height:50px;"><?PHP echo $user['user_name'] ?></td>
+                        <td style="line-height:50px;"><?PHP echo $user['address'] ?></td>
+                        <td style="line-height:50px;"><?PHP echo $user['phone'] ?></td>
+                        <td style="line-height:50px;"><?PHP echo $sell['Total']?></td>
 
                     </tr>
                     <?php }?>

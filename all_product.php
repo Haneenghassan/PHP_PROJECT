@@ -473,8 +473,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <!--
   - BANNER
 -->
-<form action="" method="post" style="margin-left: 70px; display:flex;">
-<select name="category" id="cars">
+<form action="" method="post" style="margin: 70px 0 0 100px; display:flex;">
+<select name="category" id="cars" style="padding: 10px; color:#3176F5; border:#3176F5 1px solid; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
 <!-- <a href="./all_product.php" class="menu-title">All products</a> -->
 <!-- <a href="http://localhost/PHP_PROJECT/display.php?category=security"> Security</a> -->
   <option value="All products">All products</option>
@@ -482,7 +482,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <option value="Security">Security</option>
   <option value="Kitchen">Kitchen</option>
 </select>
-<input type="submit" style="width: 60px" value="go">
+<input type="submit" style="width: 60px; background: #3176F5; border:none; color:#fff; border-top-right-radius: 8px; border-bottom-right-radius: 8px;" value="filter">
 </form>
 
 
@@ -532,7 +532,7 @@ foreach ($products as $product):
                       <ion-icon name="repeat-outline"></ion-icon>
                     </button>
               
-                   <a href="addtocart.php"> <button class="btn-action">
+                    <a href="addtocart.php?pro_id=<?php echo $product['id'] ?>&action=add"> <button class="btn-action">
                       <ion-icon name="bag-add-outline"></ion-icon>
                     </button> </a> 
                   </div>
@@ -554,8 +554,8 @@ foreach ($products as $product):
                   </div>
               
                   <div class="price-box">
-                    <p class="price">JOD 78.00</p>
-                    
+                    <p class="price">JOD<?php echo $product['price_after']; ?></p>
+                    <del>JOD<?php echo $product['price']; ?></del>
                     <!-- <a href="./aboutus.html" class="addToCart"><button> Add to Cart </button></a> -->
                   </div>
                   
