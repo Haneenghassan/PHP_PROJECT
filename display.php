@@ -24,6 +24,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
 // print_r($products);
 // echo "</pre>";
 
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
   $cate = $_POST['category'];
   if($cate == "All products"){
@@ -34,6 +35,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   }
   // print_r($_POST);
 }
+
+
 
 ?>
 

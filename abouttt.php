@@ -41,7 +41,7 @@ session_start ();
     body{
         margin: 0;
         padding: 0;
-        font-family: 'Montserrat', sans-serif;
+        font-family: sans-serif;
     }
 
     *{
@@ -53,6 +53,7 @@ session_start ();
         margin: 10%;
         margin-top: 5%;
         padding: 10px 20px;
+       
     }
 
     .About .Details{
@@ -62,19 +63,20 @@ session_start ();
         font-size: 15px;
         height: 700px;
         width: 40%;
-        letter-spacing: 3px;
+        font-family:Arial, Helvetica, sans-serif;
+    
         background-color: #fff;
     }
     .Details h1{
         font-size: 50px;
-        letter-spacing: 5px;
+        font-family:Arial, Helvetica, sans-serif;
         font-weight: bold;
         margin-bottom: 20%;
     }
 
     .Details p{
-        margin: 20px;
-        letter-spacing: 2px;
+        margin: 10px;
+        font-family: revert;
     }
 
     .Details .icons{
@@ -348,16 +350,7 @@ session_start ();
                 About US
             </h1>
             <p> 
-              With over 20 years of combined experience,
-              our electricians provide the highest standard 
-              of Commercial and Domestic electrical services
-                and solutions. With our own full time, dedicated 
-                staff, all of whom are Elecsa Part P certified, we can
-                provide a fully encompassing range of services. From house 
-                re-wiring, extensions and full renovations to air conditioning 
-                & underfloor heating systems; all aspects of lighting, including custom
-                  lighting design; we can provide for any requirements, up to the highest 
-                  specification.
+            The Power Home WebSite offers a world of possibilities in the development of context-aware homes able to take intelligent decisions and respond autonomously according to the environmental situation at any moment. Artificial intelligence provides ad hoc concepts and techniques that support this view from a computational perspective. However, research on smart homes has traditionally prioritized network and hardware-based solutions. Thus, the ambient assisted living (AAL) paradigm has focused more on active ageing approaches aimed at building safer environments that seek to promote elderly people or people with disabilities benefiting from more independent living in their own homes. AAL provides important opportunities to deliver information and communication technology-based services that improve quality of life and personal autonomy, such as proactive monitoring of users and environments; smart control of physiological measures; detection of abnormal situations; and customization according to each user's needs and preferences. This chapter includes the main building blocks and their interrelationship that is required to create a sustainable and replicable people-centered smart home.
             </p>
         </div>
         <div class="image">
@@ -390,7 +383,7 @@ session_start ();
       </li>
 
       <li class="footer-nav-item">
-        <a href="#" class="footer-nav-link"> Control  System</a>
+        <a href="#" class="footer-nav-link"> Security</a>
       </li>
 
     </ul>
@@ -425,13 +418,7 @@ session_start ();
         <a href="#" class="footer-nav-link"> Aqaba - Jordan </a>
       </li>
 
-      <li class="footer-nav-item">
-        <a href="#" class="footer-nav-link"> UK - Stanford </a>
-      </li>
-    
-      <li class="footer-nav-item">
-        <a href="#" class="footer-nav-link"> USA - New Hampshier </a>
-      </li>
+      
     
     </ul>
 
@@ -458,7 +445,7 @@ session_start ();
           <ion-icon name="call-outline"></ion-icon>
         </div>
 
-        <a href="tel:+607936-8058" class="footer-nav-link">(607) 936-8058</a>
+        <a href="tel:+607936-8058" class="footer-nav-link">0770707725</a>
       </li>
 
       <li class="footer-nav-item flex">

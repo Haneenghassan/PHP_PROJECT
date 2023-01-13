@@ -80,8 +80,9 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
       <div class="container">
 
-        <a href="#" class="header-logo">
-          <img src="./assets/images/logo/logo.png" alt="power home logo" width="55" height="55">
+        <a href="./index.php" class="header-logo" style="font-weight: 600;">
+          <img src="./assets/images/logo/logo.png" alt="power home logo" width="55" height="55">POWER HOME
+         
         </a>
 
 
@@ -483,15 +484,15 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
               <p class="banner-subtitle"></p>
 
-              <h2 class="banner-title">Modern sunglasses</h2>
+              <h2 class="banner-title">Manege Your Home</h2>
 
               <p class="banner-text">
 
-                starting at JOD <b>50</b>.00
+                starting at  <b>50</b>.00 JD
 
               </p>
 
-              <a href="#" class="banner-btn">Shop now</a>
+              <a href="./all_product.php" class="banner-btn">Shop now</a>
 
             </div>
     </div>
@@ -501,13 +502,13 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
               <p class="banner-subtitle"></p>
 
-              <h2 class="banner-title">Modern sunglasses</h2>
+              <h2 class="banner-title">Make Your Life Much Easier</h2>
 
               <p class="banner-text">
-              starting at JOD <b>15</b>.00
+              starting at <b>15</b>.00 JD
               </p>
 
-              <a href="#" class="banner-btn">Shop now</a>
+              <a href="./all_product.php" class="banner-btn">Shop now</a>
 
             </div>
     </div>
@@ -517,15 +518,15 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
               <p class="banner-subtitle"></p>
 
-              <h2 class="banner-title">Modern sunglasses</h2>
+              <h2 class="banner-title">Make Your Home Smarter</h2>
 
               <p class="banner-text">
 
-              starting at JOD <b>29</b>.99
+              starting at <b>29</b>.99 JD
 
               </p>
 
-              <a href="#" class="banner-btn">Shop now</a>
+              <a href="./all_product.php" class="banner-btn ">Shop now</a>
 
             </div>
     </div>
@@ -667,7 +668,7 @@ foreach ($products as $product):
                   <a href="#" class="showcase-category"><?php echo $product['product_name']; ?></a>
               
                   <h3>
-                    <a href="#" class="showcase-title"><strong><?php echo $product['product_desc']; ?></strong></a>
+                    <a href="#" class="showcase-title " style="color:#808080"><strong><?php echo $product['product_desc']; ?></strong></a>
                   </h3>
               
                   <div class="showcase-rating">
@@ -679,8 +680,8 @@ foreach ($products as $product):
                   </div>
               
                   <div class="price-box">
-                    <p class="price">JOD<?php echo $product['price_after']; ?></p>
-                    <del>JOD<?php echo $product['price']; ?></del>
+                    <p class="price"><?php echo $product['price_after']; ?>JD</p>
+                    <del><?php echo $product['price']; ?> JD</del>
                     <!-- <a href="./aboutus.html" class="addToCart"><button> Add to Cart </button></a> -->
                   </div>
                   
@@ -782,7 +783,7 @@ foreach ($products as $product):
           </li>
 
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link"> Control  System</a>
+            <a href="#" class="footer-nav-link">Security</a>
           </li>
 
         </ul>
@@ -817,13 +818,7 @@ foreach ($products as $product):
             <a href="#" class="footer-nav-link"> Aqaba - Jordan </a>
           </li>
   
-          <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link"> UK - Stanford </a>
-          </li>
-        
-          <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link"> USA - New Hampshier </a>
-          </li>
+          
         
         </ul>
 
@@ -850,7 +845,7 @@ foreach ($products as $product):
               <ion-icon name="call-outline"></ion-icon>
             </div>
 
-            <a href="tel:+607936-8058" class="footer-nav-link">(607) 936-8058</a>
+            <a href="tel:+607936-8058" class="footer-nav-link">0770707725</a>
           </li>
 
           <li class="footer-nav-item flex">

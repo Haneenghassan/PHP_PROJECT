@@ -554,7 +554,7 @@ foreach ($products as $product):
                   </div>
               
                   <div class="price-box">
-                    <p class="price">JOD 78.00</p>
+                    <p class="price"><?php echo $product['price']; ?> JD</p>
                     
                     <!-- <a href="./aboutus.html" class="addToCart"><button> Add to Cart </button></a> -->
                   </div>
@@ -630,13 +630,7 @@ foreach ($products as $product):
         <a href="#" class="footer-nav-link"> Aqaba - Jordan </a>
       </li>
 
-      <li class="footer-nav-item">
-        <a href="#" class="footer-nav-link"> UK - Stanford </a>
-      </li>
     
-      <li class="footer-nav-item">
-        <a href="#" class="footer-nav-link"> USA - New Hampshier </a>
-      </li>
     
     </ul>
 
@@ -663,7 +657,7 @@ foreach ($products as $product):
           <ion-icon name="call-outline"></ion-icon>
         </div>
 
-        <a href="tel:+607936-8058" class="footer-nav-link">(607) 936-8058</a>
+        <a href="tel:+607936-8058" class="footer-nav-link">0770707725</a>
       </li>
 
       <li class="footer-nav-item flex">

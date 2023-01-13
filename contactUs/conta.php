@@ -289,9 +289,9 @@ session_start ();
                 <div class="circle"></div>
                 <h2>Contact Information</h2>
                 <p>Fill up the form and our Team will get back to you within 24 hours.</p>
-                <a href="tel:+012345678910"><i class="fas fa-phone-alt"><span>+962799379762</span></i></a>
+                <a href="tel:+012345678910"><i class="fas fa-phone-alt"><span>0770707725</span></i></a>
                 <a href="mailto:hello@flowbase.com"><i class="far fa-envelope"><span>Team 4 @smarthome.com</span></i></a>
-                <a href=""><i class="fas fa-map-marker-alt"><span>Unit 3, Century Court, Westcott Venture Park, Buckinghamshire, HP18 0XP</span></i></a>
+                <a href=""><i class="fas fa-map-marker-alt"><span>Aqaba,Jordan</span></i></a>
                 <div class="social_icon">
                     <a href="/"><i class="fab fa-facebook-f"></i></a>
                     <a href="/"><i class="fab fa-instagram"></i></a>
@@ -303,13 +303,13 @@ session_start ();
             <div class="row_right_side">
                 <form action="/" autocomplete="off">
                     <label for="fname">First Name<br /><input type="text" name="fname" id="fname"
-                            placeholder="Smart"/></label>
+                            placeholder="First Name"/></label>
                     <label for="lname">Last Name<br /><input type="text" name="lname" id="lname"
-                            placeholder="Home"/></label>
+                            placeholder="Last Name"/></label>
                     <label for="mail">Mail<br /><input type="email" name="email" id="email"
-                            placeholder="smarthome@gmail.com" /></label>
+                            placeholder="Example@gmail.com" /></label>
                     <label for="phone">Phone<br /><input type="tel" name="tel" id="tel" onkeypress="telspace()" maxlength="16"
-                            placeholder="+962 799 3797 62" /></label>
+                            placeholder="Phone Number" /></label>
                     
                     <label for="message">Message</label><br />
                     <textarea name="message" id="message" placeholder="Write your Message"></textarea>
@@ -342,7 +342,7 @@ session_start ();
       </li>
 
       <li class="footer-nav-item">
-        <a href="#" class="footer-nav-link"> Control  System</a>
+        <a href="#" class="footer-nav-link">Security</a>
       </li>
 
     </ul>
@@ -377,13 +377,7 @@ session_start ();
         <a href="#" class="footer-nav-link"> Aqaba - Jordan </a>
       </li>
 
-      <li class="footer-nav-item">
-        <a href="#" class="footer-nav-link"> UK - Stanford </a>
-      </li>
-    
-      <li class="footer-nav-item">
-        <a href="#" class="footer-nav-link"> USA - New Hampshier </a>
-      </li>
+      
     
     </ul>
 
@@ -410,7 +404,7 @@ session_start ();
           <ion-icon name="call-outline"></ion-icon>
         </div>
 
-        <a href="tel:+607936-8058" class="footer-nav-link">(607) 936-8058</a>
+        <a href="tel:+607936-8058" class="footer-nav-link">0770707725</a>
       </li>
 
       <li class="footer-nav-item flex">

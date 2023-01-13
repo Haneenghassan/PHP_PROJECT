@@ -111,28 +111,12 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                   <a href="http://localhost/PHP_PROJECT/index.php" class="menu-title">Home</a>
                 </li>
       
+                
                 <li class="menu-category">
-                  <a href="#Cat" class="menu-title">Categories</a>
-      
-                  <div class="dropdown-panel">
-                    <ul class="dropdown-panel-list">
-                      <li class="menu-title">
-                        <a href="http://localhost/PHP_PROJECT/display.php?category=light"> Light</a>
-                      </li>
-                      <li class="menu-title">
-                        <a href="http://localhost/PHP_PROJECT/display.php?category=security"> Security</a>
-                      </li>
-                      <li class="menu-title">
-                        <a href="http://localhost/PHP_PROJECT/display.php?category=kitchen"> Kitchen</a>
-                      </li>
-                    </ul>
-                  </div>
+                  <a href="http://localhost/PHP_PROJECT/abouttt.php" class="menu-title">About </a>
                 </li>
                 <li class="menu-category">
-                  <a href="./aboutUs/abouttt.html" class="menu-title">About Us </a>
-                </li>
-                <li class="menu-category">
-                  <a href="./contactUs/conta.html" class="menu-title">Contact Us</a>
+                  <a href="http://localhost/PHP_PROJECT/contactUs/conta.php" class="menu-title">Contact</a>
                 </li>
                 <li class="menu-category">
                   <a href="./all_product.php" class="menu-title">Shop</a>
@@ -149,6 +133,26 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                   <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/users.php" class="menu-title">dashboard</a>
                 </li>
       <?php }} ?>
+
+
+      <?php
+                if(!isset($_SESSION['user_id'])){
+                  echo
+                '<li class="menu-category"> 
+                  <a href="AdminLTE_master/admindashboard/users/login.php" class="menu-title">Sign in</a>
+                </li>'; 
+                echo
+                '<li class="menu-category">
+                  <a href="AdminLTE_master/admindashboard/users/signup.php" class="menu-title">Registration</a>
+                </li>'; 
+              }else{
+                if(isset($_SESSION['user_id'])){
+                echo 
+                '<li class="menu-category">
+                  <a href="destroysession.php" class="menu-title">Logout</a>
+                </li>';
+              }}
+              ?>
                 
               </ul>
             </div>
@@ -197,7 +201,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                                      </div>
                                      <div class="cart_item_price cart_info_col">
                                          <div class="cart_item_title">Price</div>
-                                         <div class="cart_item_text">JOD<?php echo $product['price'] ?></div>
+                                         <div class="cart_item_text"><?php echo $product['price'] ?> JD</div>
                                      </div>
                                      <div class="cart_item_color cart_info_col">
                                          <div class="cart_item_title">discount</div>
@@ -205,7 +209,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                                      </div>
                                      <div class="cart_item_price cart_info_col">
                                          <div class="cart_item_title">Price after Discount</div>
-                                         <div class="cart_item_text">JOD<?php echo $product['price_after'] ?></div>
+                                         <div class="cart_item_text"><?php echo $product['price_after'] ?> JD</div>
                                      </div>
                                      <form action="" method="post" class="row">
                                      <div class="cart_item_quantity cart_info_col">
@@ -221,7 +225,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                                      
                                      <div class="cart_item_total cart_info_col">
                                          <div class="cart_item_title">Total</div>
-                                         <div class="cart_item_text">JOD<?php echo $_SESSION['cart'][$product['id']]['qty'] * $product['price_after'] ?></div>
+                                         <div class="cart_item_text"><?php echo $_SESSION['cart'][$product['id']]['qty'] * $product['price_after']?> JD</div>
                                      </div>
                                  </div>
                              </li>
@@ -237,7 +241,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                      <div class="order_total">
                          <div class="order_total_content text-md-right">
                              <div class="order_total_title">Order Total:</div>
-                             <div class="order_total_amount">JOD<?php echo $total ?? 0 ?></div>
+                             <div class="order_total_amount"><?php echo $total ?? 0 ?> JD</div>
                          </div>
                      </div>
                      <div class="cart_buttons row">
