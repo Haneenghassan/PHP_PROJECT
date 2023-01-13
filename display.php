@@ -6,12 +6,19 @@ session_start ();
 // print_r($_SESSION);
 
 $category = $_GET['category'];
+if(!$category){
+  echo $category;
+  header("location: http://localhost/PHP_PROJECT/all_product.php");
+}
 
 $query="SELECT * FROM categories WHERE category_name = :category_name";
 $stmt= $db->prepare($query);
 $stmt->bindValue(':category_name', $category);
 $stmt->execute();
-$id=$stmt->fetch(PDO::FETCH_ASSOC)['id'];
+if(!$id=$stmt->fetch(PDO::FETCH_ASSOC)['id']){
+  header("location: http://localhost/PHP_PROJECT/all_product.php");
+}
+
 // print_r($id);
 
 $query="SELECT * FROM products WHERE category_id = :category_id";
@@ -491,8 +498,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 
-<form action="" method="post" style="margin-left: 70px; display:flex;">
-<select name="category" id="cars">
+<form action="" method="post" style="margin: 70px 0 0 150px; display:flex;">
+<select name="category" id="cars" style="padding: 10px; color:#3176F5; border:#3176F5 1px solid; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
 <!-- <a href="./all_product.php" class="menu-title">All products</a> -->
 <!-- <a href="http://localhost/PHP_PROJECT/display.php?category=security"> Security</a> -->
   <option value="All products">All products</option>
@@ -500,7 +507,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <option value="Security">Security</option>
   <option value="Kitchen">Kitchen</option>
 </select>
-<input type="submit" style="width: 60px" value="go">
+<input type="submit" style="width: 60px; background: #3176F5; border:none; color:#fff; border-top-right-radius: 8px; border-bottom-right-radius: 8px;" value="filter">
 </form>
 
 

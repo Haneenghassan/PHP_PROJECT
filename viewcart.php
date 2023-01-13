@@ -99,7 +99,7 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <div class="header-main">
       <div class="container">
-        <a href="#" class="header-logo">
+        <a href="http://localhost/PHP_PROJECT/index.php" class="header-logo">
           <img src="./assets/images/logo/logo.png" alt="power home logo" width="55" height="55">
         </a>
         <div>
@@ -111,7 +111,6 @@ $products=$stmt->fetchAll(PDO::FETCH_ASSOC);
                   <a href="http://localhost/PHP_PROJECT/index.php" class="menu-title">Home</a>
                 </li>
       
-                
                 <li class="menu-category">
                   <a href="http://localhost/PHP_PROJECT/abouttt.php" class="menu-title">About </a>
                 </li>

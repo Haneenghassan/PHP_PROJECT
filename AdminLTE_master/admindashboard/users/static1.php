@@ -44,7 +44,7 @@ $most_selling=$stmt->fetchAll(PDO::FETCH_ASSOC);
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Users Info</h3>
+                <h3 class="card-title">Products Info</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0"> 
@@ -52,21 +52,32 @@ $most_selling=$stmt->fetchAll(PDO::FETCH_ASSOC);
                 <thead>
                   <tr>
                   <!-- <th scope="col">ID</th> -->
-                    <th scope="col">Product ID</th>
+                  <th scope="col">Product image</th>
+                    <th scope="col">Product name</th>
+                    <th scope="col">Product price</th>
+                    <th scope="col">category name</th>
                     <th scope="col">Quantity</th>
                   </tr>
                 </thead>
                 <tbody>
                     <?php
                     foreach($most_selling as $sell){
-                        
+                      $id = $sell['product_id'];
+                      $query='SELECT * FROM products inner join categories on category_id = categories.id WHERE products.id = :id';
+                      $stmt=$db->prepare($query);
+                      $stmt->bindValue(':id', $id);
+                      $stmt->execute();
+                      $product=$stmt->fetch(PDO::FETCH_ASSOC);
                     ?>
 
                     <tr>
                     
                         <!-- <th scope="row"><?PHP echo $user['id']?></th> -->
-                        <td><?PHP echo $sell['product_id'] ?></td>
-                        <td><?PHP echo $sell['count(quantity)']?></td>
+                        <td><img width="100" src="../../upload/<?PHP echo  $product['product_img'] ?>" alt=""></td>
+                        <td style="line-height: 100px"><?PHP echo  $product['product_name'] ?></td>
+                        <td style="line-height: 100px">$ <?PHP echo  $product['price_after'] ?></td>
+                        <td style="line-height: 100px"><?PHP echo  $product['category_name'] ?></td>
+                        <td style="line-height: 100px"><?PHP echo $sell['count(quantity)']?></td>
 
                     </tr>
                     <?php }?>
