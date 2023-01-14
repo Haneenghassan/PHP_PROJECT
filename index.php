@@ -904,10 +904,10 @@ foreach ($products as $product):
 
       <div class="container">
 
-        <img src="./assets/images/payment.png" alt="payment method" class="payment-img">
+      
 
         <p class="copyright">
-          Copyright &copy; <a href="#"> Orange Coding Academy </a> all rights reserved.
+          Copyright &copy; <a href="#"> Power Home </a> all rights reserved.
         </p>
 
       </div>

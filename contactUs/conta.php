@@ -38,7 +38,9 @@ session_start ();
   -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
+<!-- - custom css link -->
 
+  <link rel="stylesheet" href="./assets/css/style-prefix.css">
  <!--
     - google font link
   -->
@@ -321,7 +323,8 @@ session_start ();
 
 
     
-  <footer>
+
+    <footer>
 
 <div class="footer-nav">
 
@@ -463,21 +466,33 @@ session_start ();
 
   <div class="container">
 
-    <img src="../assets/images/payment.png" alt="payment method" class="payment-img">
+  
 
-    
-  </div>
-  <p class="copyright">
-      Copyright &copy; <a href="#"> Orange Coding Academy </a> all rights reserved.
+    <p class="copyright" style="padding-left:27em;">
+      Copyright &copy; <a href="#"> Power Home </a> all rights reserved.
     </p>
+
+  </div>
 
 </div>
 
 </footer>
 
 
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<!--
+- custom js link
+-->
+<script src="./assets/js/script.js"></script>
+
+<!--
+- ionicon link
+-->
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
 </body>
 
 </html>
