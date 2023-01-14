@@ -799,17 +799,17 @@ foreach ($products as $product):
 
 <div class="footer-bottom">
 
-  <div class="container">
+      <div class="container">
 
-    <img src="./assets/images/payment.png" alt="payment method" class="payment-img">
+      
 
-    
-  </div>
-  <p class="copyright">
-      Copyright &copy; <a href="#"> Orange Coding Academy </a> all rights reserved.
-    </p>
+        <p class="copyright">
+          Copyright &copy; <a href="#"> Power Home </a> all rights reserved.
+        </p>
 
-</div>
+      </div>
+
+    </div>
 
 </footer>
 
