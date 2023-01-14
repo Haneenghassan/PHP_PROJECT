@@ -25,7 +25,7 @@ $most_selling=$stmt->fetchAll(PDO::FETCH_ASSOC);
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>most product in orders</h1>
+            <h1> Populer Orders</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -99,7 +99,7 @@ $most_selling=$stmt->fetchAll(PDO::FETCH_ASSOC);
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.2.0
+    
     </div>
     <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
   </footer>

@@ -169,7 +169,7 @@
             <a href="http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/users/static2.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Populer Custemors
+                Populer Custemers
                 <!-- <span class="right badge badge-danger">New</span> -->
               </p>
             </a>

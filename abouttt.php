@@ -123,10 +123,11 @@ session_start ();
         <div class="header-main" style ="padding:11px 0 ;">
     
     
-          <div class="container">
+          <div class="container " >
     
-            <a href="./index.php" class="header-logo">
+            <a href="./index.php" class="header-logo" style="font-weight: 600;color:#2e5cd3">
               <img src="./assets/images/logo/logo.png" alt="power home logo" width="55" height="55">
+              POWER HOME
             </a>
     
     

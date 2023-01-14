@@ -83,8 +83,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
       <div class="container">
 
-        <a href="#" class="header-logo">
-          <img src="./assets/images/logo/logo.png" alt="power home logo" width="55" height="55">
+        <a href="#" class="header-logo" style="font-weight: 600;color:#2e5cd3">
+          <img src="./assets/images/logo/logo.png" alt="power home logo" width="55" height="55">POWER HOME
         </a>
 
 
