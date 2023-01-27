@@ -1,9 +1,9 @@
-<?php 
+<?php
 require_once "../../config/connect.php";
 $erorrs = [];
 
   if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["user_name"]) && isset($_POST["user_email"]) && isset($_POST["address"])&& isset($_POST["password"]) && isset($_POST["confirm"])){
-    
+
       $user_name=$_POST['user_name'];
       $user_email=$_POST['user_email'];
       $address=$_POST['address'];
@@ -134,10 +134,10 @@ header("Location:http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/use
         <div class="social-auth-links text-center">
           <input type="submit" class="btn btn-block btn-primary" value="register">
         </div>
-       
+
       </form>
 
-      
+
         <p class="text-center">- OR -</p>
 
       <a href="login.html" class="text-center">I already have a membership</a>
@@ -146,6 +146,7 @@ header("Location:http://localhost/PHP_PROJECT/AdminLTE_master/admindashboard/use
   </div><!-- /.card -->
 </div>
 <!-- /.register-box -->
+
 
 <!-- jQuery -->
 <script src="../../plugins/jquery/jquery.min.js"></script>
